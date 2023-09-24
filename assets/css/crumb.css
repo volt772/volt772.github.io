@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.allen-btn-top {
+  margin-top: 3px;
+}
+
+.blog-card .content-holder .allen-post-details p {
+  margin-right: 10px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  opacity: .7;
+  font-size: 13px;
+}
