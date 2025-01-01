@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정회남 경력기술서</title>
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -241,6 +243,59 @@
             </li>
         </ul>
     </section>
-  </div>
+    </div>
+    
+    <!-- PDF 다운로드 버튼 -->
+    <div style="text-align: center; margin: 1rem;">
+        <button id="download-pdf" style="
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;">
+            PDF로 다운로드
+        </button>
+    </div>
+
+  <script>
+    document.getElementById('download-pdf').addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+  
+      html2canvas(document.querySelector('.container'), {
+        scale: 2, // 해상도 높이기
+        useCORS: true, // 외부 리소스 로드 허용
+      }).then(canvas => {
+        const imgData = canvas.toDataURL('image/png'); // 캔버스를 이미지로 변환
+        const pdf = new jsPDF('p', 'mm', 'a4'); // PDF 객체 생성
+  
+        const imgWidth = 190; // PDF 너비 (여백 고려)
+        const pageHeight = 297; // A4 높이
+        const imgHeight = (canvas.height * imgWidth) / canvas.width; // 이미지 비율 계산
+        let heightLeft = imgHeight;
+  
+        let position = 0;
+  
+        // 첫 페이지 추가
+        pdf.addImage(imgData, 'PNG', 10, position + 10, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+  
+        // 나머지 페이지 추가
+        while (heightLeft > 0) {
+          position -= pageHeight;
+          pdf.addPage();
+          pdf.addImage(imgData, 'PNG', 10, position + 10, imgWidth, imgHeight);
+          heightLeft -= pageHeight;
+        }
+  
+        // PDF 저장
+        pdf.save('경력기술서(정회남).pdf');
+      }).catch(err => {
+        console.error('PDF 생성 중 오류 발생:', err);
+      });
+    });
+  </script>
+
 </body>
 </html>
