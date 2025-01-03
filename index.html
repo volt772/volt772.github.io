@@ -26,7 +26,7 @@
         <!-- Section 경력기술서 블럭 -->
         <div class="container" id="career">
             <h1>정회남</h1>
-            <p class="contact">
+            <p class="contact" style="margin-top: -21px;">
                 <a href="mailto:volt772@naver.com">volt772@naver.com</a>
             </p>
 
@@ -263,31 +263,60 @@
         <div class="container portfolio" id="portfolio">
             <h1 style="margin-bottom: 30px;">포트폴리오</h1>
             <section>
-                <h2>'그룹웨어' 안드로이드앱 (메일플러그)</h2>
-                <img src="assets/imgs/g_company1.png" class="portfolio-img" alt="">
-                <img src="assets/imgs/g_company2.png" class="portfolio-img" alt="">
-                <img src="assets/imgs/g_company3.png" class="portfolio-img" alt="">
+                <div class="section-title">그룹웨어 (메일, 연락처, 캘린더, 근태관리 등)</div>
+                <p class="portfolio-desc">사용 : 기업솔루션(메일플러그) ▪ 플랫폼 : 안드로이드 ▪ 개발규모 : 3인~5인 ▪ 참여 : 100%</p>
+                <div class="slider" id="slider1">
+                    <div class="slides">
+                        <img src="assets/imgs/g_company1.png" class="portfolio-img" alt="">
+                        <img src="assets/imgs/g_company2.png" class="portfolio-img" alt="">
+                        <img src="assets/imgs/g_company3.png" class="portfolio-img" alt="">
+                    </div>
+                    <button class="prev">◀</button>
+                    <button class="next">▶</button>
+                </div>
             </section>
 
             <section>
-                <h2>'프로야구직관러' 안드로이드앱 (개인)</h2>
-                <img src="assets/imgs/g_prooya1.png" class="portfolio-img" alt="">
-                <img src="assets/imgs/g_prooya2.png" class="portfolio-img" alt="">
+                <div class="section-title">프로야구직관러 (직관기록 관리)</div>
+                <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
+                <div class="slider" id="slider2">
+                    <div class="slides">
+                        <img src="assets/imgs/g_prooya1.png" class="portfolio-img" alt="">
+                        <img src="assets/imgs/g_prooya2.png" class="portfolio-img" alt="">
+                    </div>
+                    <button class="prev">◀</button>
+                    <button class="next">▶</button>
+                </div>
             </section>
 
             <section>
-                <h2>'아!그거 (할일리스트)' 안드로이드앱 (개인)</h2>
-                <img src="assets/imgs/g_chipmunk1.png" class="portfolio-img" alt="">
-                <img src="assets/imgs/g_chipmunk2.png" class="portfolio-img" alt="">
+                <div class="section-title">아!그거 ('할일(Todo List)'리스트 관리)</div>
+                <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
+                <div class="slider" id="slider3">
+                    <div class="slides">
+                        <img src="assets/imgs/g_chipmunk1.png" class="portfolio-img" alt="">
+                        <img src="assets/imgs/g_chipmunk2.png" class="portfolio-img" alt="">
+                    </div>
+                    <button class="prev">◀</button>
+                    <button class="next">▶</button>
+                </div>
             </section>
 
             <section>
-                <h2>'야구장날씨' 안드로이드앱 (개인)</h2>
-                <img src="assets/imgs/g_mongoose1.png" class="portfolio-img" alt="">
+                <div class="section-title">야구장날씨 (날씨 정보)</div>
+                <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
+                <div class="slider" id="slider4">
+                    <div class="slides">
+                        <img src="assets/imgs/g_mongoose1.png" class="portfolio-img" alt="">
+                    </div>
+                    <button class="prev">◀</button>
+                    <button class="next">▶</button>
+                </div>
             </section>
 
             <section>
-                <h2>'잡퀘스트' 웹사이트 (개인)</h2>
+                <div class="section-title">잡퀘스트 (입사지원 관리 및 분석)</div>
+                <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 웹</p>
                 <h3 style="text-align: center;">진행중</h3>
             </section>
         </div>
@@ -300,7 +329,36 @@
           </footer>
         
         <script>
-            // 부드럽게 스크롤과 위치 조정
+            // 포트폴리오 '이미지 슬라이더'
+            document.addEventListener("DOMContentLoaded", () => {
+                const sliders = document.querySelectorAll(".slider");
+
+                sliders.forEach(slider => {
+                    const slides = slider.querySelector(".slides");
+                    const slideImages = slides.querySelectorAll("img");
+                    const prevButton = slider.querySelector(".prev");
+                    const nextButton = slider.querySelector(".next");
+
+                    let currentIndex = 0;
+                    const totalSlides = slideImages.length;
+
+                    function updateSlidePosition() {
+                        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    }
+
+                    prevButton.addEventListener("click", () => {
+                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                        updateSlidePosition();
+                    });
+
+                    nextButton.addEventListener("click", () => {
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        updateSlidePosition();
+                    });
+                });
+            });
+
+            // '부드럽게!' 스크롤과 위치 조정
             document.querySelectorAll('.smooth-scroll').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
