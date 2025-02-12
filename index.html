@@ -1,90 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>정회남 경력기술서</title>
-        <link rel="stylesheet" href="./assets/css/styles.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <div class="navbar-container">
-            <div class="navbar">
-                <div class="menu">
-                    <a href="#career" class="smooth-scroll">경력기술서</a>
-                    <a href="#portfolio" class="smooth-scroll">포트폴리오</a>
-                </div>
-                <!-- PDF 다운로드 버튼 -->
-                <div class="buttons">
-                    <button id="download-pdf">PDF 다운로드</button>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정회남 경력기술서</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar-container">
+      <div class="navbar">
+        <div class="menu">
+          <a href="#career" class="smooth-scroll">경력기술서</a>
+          <a href="#portfolio" class="smooth-scroll">포트폴리오</a>
         </div>
+        <!-- PDF 다운로드 버튼 -->
+        <div class="buttons">
+          <button id="download-pdf">PDF 다운로드</button>
+        </div>
+      </div>
+    </div>
 
-        <!-- Section 경력기술서 블럭 -->
-        <div class="container" id="career">
-            <h1>정회남</h1>
-            <p class="contact" style="margin-top: -21px;">
-                <a href="mailto:volt772@naver.com">volt772@naver.com</a>
-            </p>
+    <!-- Section 경력기술서 블럭 -->
+    <div class="container" id="career">
+      <h1>정회남</h1>
+      <p class="contact" style="margin-top: -21px">
+        <a href="mailto:volt772@naver.com">volt772@naver.com</a>
+      </p>
 
-            <!-- 전문보유 및 사용기술 -->
-            <section id="skills">
-                <div class="section-title">전문보유 및 사용기술</div>
-                <div class="skills-category">
-                    <h3>안드로이드</h3>
-                    <ul>
-                        <li>Kotlin, Java, Flow, Compose, Hilt, Coroutine, CleanArchitecture, MaterialUI</li>
-                        <li>Firebase (Crashlytics, RemoteConfig, Notification), Retrofit, Glide, WebView</li>
-                        <li>Biometric, WebSocket, JUnit, Espresso, LifeCycles, LiveData, ViewModel</li>
-                        <li>Room, Paging, DataBinding, WorkManager</li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>프론트엔드</h3>
-                    <ul>
-                        <li>PHP(CodeIgniter), Javascript, JQuery</li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>백엔드</h3>
-                    <ul>
-                        <li>Python(Flask), Ubuntu, Nginx, Gunicorn</li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>데이터베이스</h3>
-                    <ul>
-                        <li>MySQL, PostgreSQL, Redis</li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>형상관리</h3>
-                    <ul>
-                        <li>Git, Hg Mercurial, SVN</li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>기타</h3>
-                    <ul>
-                        <li>Confluence, Vim, Notion, Shell, DrawIO, Figma, Zeplin</li>
-                    </ul>
-                </div>
-            </section>
+      <!-- 전문보유 및 사용기술 -->
+      <section id="skills">
+        <div class="section-title">전문보유 및 사용기술</div>
+        <div class="skills-category">
+          <h3>안드로이드</h3>
+          <ul>
+            <li>
+              Kotlin, Java, Flow, Compose, Hilt, Coroutine, CleanArchitecture,
+              MaterialUI
+            </li>
+            <li>
+              Firebase (Crashlytics, RemoteConfig, Notification), Retrofit,
+              Glide, WebView
+            </li>
+            <li>
+              Biometric, WebSocket, JUnit, Espresso, LifeCycles, LiveData,
+              ViewModel
+            </li>
+            <li>Room, Paging, DataBinding, WorkManager</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h3>프론트엔드</h3>
+          <ul>
+            <li>PHP(CodeIgniter), Javascript, JQuery</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h3>백엔드</h3>
+          <ul>
+            <li>Python(Flask), Ubuntu, Nginx, Gunicorn</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h3>데이터베이스</h3>
+          <ul>
+            <li>MySQL, PostgreSQL, Redis</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h3>형상관리</h3>
+          <ul>
+            <li>Git, Hg Mercurial, SVN</li>
+          </ul>
+        </div>
+        <div class="skills-category">
+          <h3>기타</h3>
+          <ul>
+            <li>Confluence, Vim, Notion, Shell, DrawIO, Figma, Zeplin</li>
+          </ul>
+        </div>
+      </section>
 
-            <!-- Section 경력 -->
-            <section>
-                <h2>경력</h2>
-                <ul>
-                    <li>
-                        <strong>(주)웹게이트 (2024-2024)</strong> - 안드로이드
-                        <pre class="pre-content">1. 자사 안드로이드앱 유지보수</pre>
-                    </li>
-                    <li>
-                        <strong>(주)메일플러그 (2013 - 2022)</strong> - 웹/모바일
-                        <pre class="pre-content">
+      <!-- Section 경력 -->
+      <section>
+        <h2>경력</h2>
+        <ul>
+          <li>
+            <strong>(주)웹게이트 (2024-2024)</strong> - 안드로이드
+            <pre class="pre-content">1. 자사 안드로이드앱 유지보수</pre>
+          </li>
+          <li>
+            <strong>(주)메일플러그 (2013 - 2022)</strong> - 웹/모바일
+            <pre class="pre-content">
                             1. 웹서비스 개발 및 유지보수 (경력 : 4년)
                             * 사용 기술: PHP(CodeIgniter), HTML, CSS, JavaScript, JQuery, MySQL
                             * 고객 관리, 상품 신청, 데이터 시각화 등 자사 웹서비스의 주요 기능 개발 및 유지보수
@@ -115,18 +124,19 @@
                             * Figma를 활용해 디자이너와 협업하여 UI/UX 설계를 조정하고, 백엔드 개발자와 데이터 연동 최적화
                             * 문제 상황을 문서화하고 대안 제시를 통해 구성원들과 유연한 협의 진행
                             * 코드 리뷰 및 형상 관리 도구로 효율적인 협업 환경 조성
-                        </pre>
-                    </li>
-                </ul>
-            </section>
+                        </pre
+            >
+          </li>
+        </ul>
+      </section>
 
-            <!-- Section 프로젝트 -->
-            <section>
-                <h2>프로젝트</h2>
-                <ul>
-                    <li>
-                        <strong>(주)메일플러그 (2013 - 2022)</strong>
-                        <pre class="pre-content">
+      <!-- Section 프로젝트 -->
+      <section>
+        <h2>프로젝트</h2>
+        <ul>
+          <li>
+            <strong>(주)메일플러그 (2013 - 2022)</strong>
+            <pre class="pre-content">
                             1. TODO List 안드로이드 네이티브 앱 개발 (2021.10 ~ 2022.07)
                             * '협업용 할 일 관리 서비스' 출시를 위한 주요 기능 개발
                             * WebSocket을 활용한 실시간 데이터 동기화 및 오프라인 모드 구현
@@ -189,11 +199,12 @@
                             * 성과:
                             ┕ Windows 기반 솔루션 안정적 제공으로 고객 서비스 품질 향상
                             ┕ 사용자 요구사항을 반영하여 기능 안정성과 활용성 강화
-                        </pre>
-                    </li>
-                    <li>
-                        <strong>개인</strong>
-                        <pre class="pre-content">
+                        </pre
+            >
+          </li>
+          <li>
+            <strong>개인</strong>
+            <pre class="pre-content">
                             1. 잡퀘스트 (2024.12 ~ 진행중)
                             * React웹 개발
                             * 입사지원현황 관리 및 데이터 분석제공 서비스
@@ -214,17 +225,18 @@
                             * 프로야구 직관기록 앱
                             * 안드로이드 : Kotlin, MVVM, LiveData, Retrofit, Room 등.
                             * 서버 : Python, Flask, PostgreSQL, Ubuntu, BeautifulSoup 등.
-                        </pre>
-                    </li>
-                </ul>
-            </section>
-            
-            <!-- Section 역량 -->
-            <section>
-                <h2>역량</h2>
-                <ul>
-                    <li>
-                        <pre class="pre-content">
+                        </pre
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 역량 -->
+      <section>
+        <h2>역량</h2>
+        <ul>
+          <li>
+            <pre class="pre-content">
                             * 5인규모의 팀 리드 경험
                             * Kotlin과 Python 사용에 능숙
                             * 소스코드는 Git(GitFlow)을 이용하여 관리
@@ -233,203 +245,264 @@
                             * Confluence 제품을 사용한 문서화 능력 보유
                             * 다양한 웹기반 프로그램 발굴 및 다재다능한 사용 능력 보유 (UML, DB Modeling, JSON Linter 등..)
                             * Firebase, Sentry와 같은 다양한 모니터링 툴 사용 능력 보유
-                        </pre>
-                    </li>
-                </ul>
-            </section>
-            <!-- 기타 -->
-            <section>
-                <h2>기타</h2>
-                <ul>
-                    <li>
-                        <strong>자격증</strong>
-                        <pre class="pre-content">
+                        </pre
+            >
+          </li>
+        </ul>
+      </section>
+      <!-- 기타 -->
+      <section>
+        <h2>기타</h2>
+        <ul>
+          <li>
+            <strong>자격증</strong>
+            <pre class="pre-content">
                             * SQL개발자 (2024.12.13.)
                             * 리눅스마스터2급 (2016.12.16)
                             * 정보처리기사 (2012.11.23)
-                        </pre>
-                    </li>
-                    <li>
-                        <strong>학력</strong>
-                        <pre class="pre-content">
+                        </pre
+            >
+          </li>
+          <li>
+            <strong>학력</strong>
+            <pre class="pre-content">
                             * 중앙대학교 : 영어학과(주전공) / 정보시스템학과(복수전공)
-                        </pre>
-                    </li>
-                </ul>
-            </section>
+                        </pre
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Section 포트폴리오 블럭 -->
+    <div class="container portfolio" id="portfolio">
+      <h1 style="margin-bottom: 30px">포트폴리오</h1>
+      <section>
+        <div class="section-title">
+          그룹웨어 (메일, 연락처, 캘린더, 근태관리 등)
         </div>
-        
-        <!-- Section 포트폴리오 블럭 -->
-        <div class="container portfolio" id="portfolio">
-            <h1 style="margin-bottom: 30px;">포트폴리오</h1>
-            <section>
-                <div class="section-title">그룹웨어 (메일, 연락처, 캘린더, 근태관리 등)</div>
-                <p class="portfolio-desc">사용 : 기업솔루션(메일플러그) ▪ 플랫폼 : 안드로이드 ▪ 개발규모 : 3인~5인 ▪ 참여 : 100%</p>
-                <div class="slider" id="slider1">
-                    <div class="slides">
-                        <img src="assets/imgs/g_company1.png" class="portfolio-img" alt="">
-                        <img src="assets/imgs/g_company2.png" class="portfolio-img" alt="">
-                        <img src="assets/imgs/g_company3.png" class="portfolio-img" alt="">
-                    </div>
-                    <button class="prev">◀</button>
-                    <button class="next">▶</button>
-                </div>
-            </section>
-
-            <section>
-                <div class="section-title">프로야구직관러 (직관기록 관리)</div>
-                <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
-                <div class="slider" id="slider2">
-                    <div class="slides">
-                        <img src="assets/imgs/g_prooya1.png" class="portfolio-img" alt="">
-                        <img src="assets/imgs/g_prooya2.png" class="portfolio-img" alt="">
-                    </div>
-                    <button class="prev">◀</button>
-                    <button class="next">▶</button>
-                </div>
-            </section>
-
-            <section>
-                <div class="section-title">아!그거 ('할일(Todo List)'리스트 관리)</div>
-                <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
-                <div class="slider" id="slider3">
-                    <div class="slides">
-                        <img src="assets/imgs/g_chipmunk1.png" class="portfolio-img" alt="">
-                        <img src="assets/imgs/g_chipmunk2.png" class="portfolio-img" alt="">
-                    </div>
-                    <button class="prev">◀</button>
-                    <button class="next">▶</button>
-                </div>
-            </section>
-
-            <section>
-                <div class="section-title">야구장날씨 (날씨 정보)</div>
-                <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
-                <div class="slider" id="slider4">
-                    <div class="slides">
-                        <img src="assets/imgs/g_mongoose1.png" class="portfolio-img" alt="">
-                    </div>
-                    <button class="prev">◀</button>
-                    <button class="next">▶</button>
-                </div>
-            </section>
-
-            <section>
-                <div class="section-title">잡퀘스트 (입사지원 관리 및 분석)</div>
-                <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 웹</p>
-                <h3 style="text-align: center;">진행중</h3>
-            </section>
+        <p class="portfolio-desc">
+          사용 : 기업솔루션(메일플러그) ▪ 플랫폼 : 안드로이드 ▪ 개발규모 :
+          3인~5인 ▪ 참여 : 100%
+        </p>
+        <div class="slider" id="slider1">
+          <div class="slides">
+            <img
+              src="assets/imgs/g_company1.png"
+              class="portfolio-img"
+              alt=""
+            />
+            <img
+              src="assets/imgs/g_company2.png"
+              class="portfolio-img"
+              alt=""
+            />
+            <img
+              src="assets/imgs/g_company3.png"
+              class="portfolio-img"
+              alt=""
+            />
+          </div>
+          <button class="prev">◀</button>
+          <button class="next">▶</button>
         </div>
+      </section>
 
-        <footer class="footer">
-            <p>
-                &copy; 2025 정회남. All rights reserved.<br>
-                최종업데이트 : 2025.01.03.
-            </p>
-          </footer>
-        
-        <script>
-            // 포트폴리오 '이미지 슬라이더'
-            document.addEventListener("DOMContentLoaded", () => {
-                const sliders = document.querySelectorAll(".slider");
+      <section>
+        <div class="section-title">프로야구직관러 (직관기록 관리)</div>
+        <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
+        <div class="slider" id="slider2">
+          <div class="slides">
+            <img src="assets/imgs/g_prooya1.png" class="portfolio-img" alt="" />
+            <img src="assets/imgs/g_prooya2.png" class="portfolio-img" alt="" />
+          </div>
+          <button class="prev">◀</button>
+          <button class="next">▶</button>
+        </div>
+      </section>
 
-                sliders.forEach(slider => {
-                    const slides = slider.querySelector(".slides");
-                    const slideImages = slides.querySelectorAll("img");
-                    const prevButton = slider.querySelector(".prev");
-                    const nextButton = slider.querySelector(".next");
+      <section>
+        <div class="section-title">아!그거 ('할일(Todo List)'리스트 관리)</div>
+        <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
+        <div class="slider" id="slider3">
+          <div class="slides">
+            <img
+              src="assets/imgs/g_chipmunk1.png"
+              class="portfolio-img"
+              alt=""
+            />
+            <img
+              src="assets/imgs/g_chipmunk2.png"
+              class="portfolio-img"
+              alt=""
+            />
+          </div>
+          <button class="prev">◀</button>
+          <button class="next">▶</button>
+        </div>
+      </section>
 
-                    let currentIndex = 0;
-                    const totalSlides = slideImages.length;
+      <section>
+        <div class="section-title">야구장날씨 (날씨 정보)</div>
+        <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
+        <div class="slider" id="slider4">
+          <div class="slides">
+            <img
+              src="assets/imgs/g_mongoose1.png"
+              class="portfolio-img"
+              alt=""
+            />
+          </div>
+          <button class="prev">◀</button>
+          <button class="next">▶</button>
+        </div>
+      </section>
 
-                    function updateSlidePosition() {
-                        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    }
+      <section>
+        <div class="section-title">잡퀘스트 (입사지원 관리 및 분석)</div>
+        <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 웹(React)</p>
+        <div class="slider" id="slider4">
+          <div class="slides">
+            <img
+              src="assets/imgs/g_jobquest1.png"
+              class="portfolio-img"
+              alt=""
+            />
+            <img
+              src="assets/imgs/g_jobquest2.png"
+              class="portfolio-img"
+              alt=""
+            />
+          </div>
+          <button class="prev">◀</button>
+          <button class="next">▶</button>
+        </div>
+      </section>
+    </div>
 
-                    prevButton.addEventListener("click", () => {
-                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                        updateSlidePosition();
-                    });
+    <footer class="footer">
+      <p>
+        &copy; 2025 정회남. All rights reserved.<br />
+        최종업데이트 : 2025.02.12.
+      </p>
+    </footer>
 
-                    nextButton.addEventListener("click", () => {
-                        currentIndex = (currentIndex + 1) % totalSlides;
-                        updateSlidePosition();
-                    });
-                });
+    <script>
+      // 포트폴리오 '이미지 슬라이더'
+      document.addEventListener("DOMContentLoaded", () => {
+        const sliders = document.querySelectorAll(".slider");
+
+        sliders.forEach((slider) => {
+          const slides = slider.querySelector(".slides");
+          const slideImages = slides.querySelectorAll("img");
+          const prevButton = slider.querySelector(".prev");
+          const nextButton = slider.querySelector(".next");
+
+          let currentIndex = 0;
+          const totalSlides = slideImages.length;
+
+          function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+          }
+
+          prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+          });
+
+          nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlidePosition();
+          });
+        });
+      });
+
+      // '부드럽게!' 스크롤과 위치 조정
+      document.querySelectorAll(".smooth-scroll").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1); // # 제거
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            const offsetPosition = targetElement.offsetTop - 100; // 100px 위로 조정
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth", // 부드러운 스크롤
             });
+          }
+        });
+      });
 
-            // '부드럽게!' 스크롤과 위치 조정
-            document.querySelectorAll('.smooth-scroll').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1); // # 제거
-                    const targetElement = document.getElementById(targetId);
+      // '*', '┕' 로시작되는 내용 CSS 처리
+      const preElements = document.querySelectorAll(".pre-content"); // 모든 .content 요소 선택
 
-                    if (targetElement) {
-                        const offsetPosition = targetElement.offsetTop - 100; // 100px 위로 조정
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth' // 부드러운 스크롤
-                        });
-                    }
-                });
-            });
+      preElements.forEach((preElement) => {
+        const lines = preElement.textContent.split("\n"); // 각 pre 요소의 텍스트를 줄 단위로 분리
+        const processedLines = lines.map((line) => {
+          if (line.includes("*")) {
+            return `<span class="indented-line-depth1">${line}</span>`; // 특정 기호(*)가 포함된 줄에만 클래스 추가
+          } else if (line.includes("┕")) {
+            return `<span class="indented-line-depth2">${line}</span>`; // 특정 기호(*)가 포함된 줄에만 클래스 추가
+          }
+          return line;
+        });
+        preElement.innerHTML = processedLines.join("\n"); // 각 줄을 다시 결합하여 업데이트
+      });
 
-            // '*', '┕' 로시작되는 내용 CSS 처리 
-            const preElements = document.querySelectorAll('.pre-content'); // 모든 .content 요소 선택
+      // 'PDF다운로드' 버튼이벤트
+      document.getElementById("download-pdf").addEventListener("click", () => {
+        const { jsPDF } = window.jspdf;
 
-            preElements.forEach(preElement => {
-            const lines = preElement.textContent.split('\n'); // 각 pre 요소의 텍스트를 줄 단위로 분리
-            const processedLines = lines.map(line => {
-                if (line.includes('*')) {
-                    return `<span class="indented-line-depth1">${line}</span>`; // 특정 기호(*)가 포함된 줄에만 클래스 추가
-                } else if (line.includes('┕')) {
-                    return `<span class="indented-line-depth2">${line}</span>`; // 특정 기호(*)가 포함된 줄에만 클래스 추가
-                }
-                return line;
-            });
-            preElement.innerHTML = processedLines.join('\n'); // 각 줄을 다시 결합하여 업데이트
-            });
+        html2canvas(document.querySelector(".container"), {
+          scale: 2, // 해상도 높이기
+          useCORS: true, // 외부 리소스 로드 허용
+        })
+          .then((canvas) => {
+            const imgData = canvas.toDataURL("image/png"); // 캔버스를 이미지로 변환
+            const pdf = new jsPDF("p", "mm", "a4"); // PDF 객체 생성
 
-            // 'PDF다운로드' 버튼이벤트
-            document.getElementById("download-pdf").addEventListener("click", () => {
-                const { jsPDF } = window.jspdf;
+            const imgWidth = 190; // PDF 너비 (여백 고려)
+            const pageHeight = 297; // A4 높이
+            const imgHeight = (canvas.height * imgWidth) / canvas.width; // 이미지 비율 계산
+            let heightLeft = imgHeight;
 
-                html2canvas(document.querySelector(".container"), {
-                    scale: 2, // 해상도 높이기
-                    useCORS: true, // 외부 리소스 로드 허용
-                })
-                .then((canvas) => {
-                    const imgData = canvas.toDataURL("image/png"); // 캔버스를 이미지로 변환
-                    const pdf = new jsPDF("p", "mm", "a4"); // PDF 객체 생성
+            let position = 0;
 
-                    const imgWidth = 190; // PDF 너비 (여백 고려)
-                    const pageHeight = 297; // A4 높이
-                    const imgHeight = (canvas.height * imgWidth) / canvas.width; // 이미지 비율 계산
-                    let heightLeft = imgHeight;
+            // 첫 페이지 추가
+            pdf.addImage(
+              imgData,
+              "PNG",
+              10,
+              position + 10,
+              imgWidth,
+              imgHeight
+            );
+            heightLeft -= pageHeight;
 
-                    let position = 0;
+            // 나머지 페이지 추가
+            while (heightLeft > 0) {
+              position -= pageHeight;
+              pdf.addPage();
+              pdf.addImage(
+                imgData,
+                "PNG",
+                10,
+                position + 10,
+                imgWidth,
+                imgHeight
+              );
+              heightLeft -= pageHeight;
+            }
 
-                    // 첫 페이지 추가
-                    pdf.addImage(imgData, "PNG", 10, position + 10, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-
-                    // 나머지 페이지 추가
-                    while (heightLeft > 0) {
-                        position -= pageHeight;
-                        pdf.addPage();
-                        pdf.addImage(imgData, "PNG", 10, position + 10, imgWidth, imgHeight);
-                        heightLeft -= pageHeight;
-                    }
-
-                    // PDF 저장
-                    pdf.save("경력기술서(정회남).pdf");
-                })
-                .catch((err) => {
-                    console.error("PDF 생성 중 오류 발생:", err);
-                    alert("생성중 실패하였습니다.")
-                });
-            });
-        </script>
-    </body>
+            // PDF 저장
+            pdf.save("경력기술서(정회남).pdf");
+          })
+          .catch((err) => {
+            console.error("PDF 생성 중 오류 발생:", err);
+            alert("생성중 실패하였습니다.");
+          });
+      });
+    </script>
+  </body>
 </html>
