@@ -160,7 +160,7 @@ h3 {
 
 .skills-category {
   background: var(--bg-secondary);
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   transition: var(--transition);
@@ -233,7 +233,7 @@ section {
   white-space: pre-line;
   color: var(--text-secondary);
   background: var(--bg-tertiary);
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
   border-radius: var(--border-radius-sm);
 }
 
