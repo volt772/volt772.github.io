@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>정회남 경력기술서</title>
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -14,12 +15,12 @@
       <div class="navbar">
         <div class="menu">
           <a href="#career" class="smooth-scroll">경력기술서</a>
-          <a href="#portfolio" class="smooth-scroll">포트폴리오</a>
+          <!-- <a href="#portfolio" class="smooth-scroll">포트폴리오</a> -->
         </div>
         <!-- PDF 다운로드 버튼 -->
-        <div class="buttons">
+        <!-- <div class="buttons">
           <button id="download-pdf">PDF 다운로드</button>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -37,7 +38,7 @@
           <h3>프로그래밍 기술</h3>
           <ul>
             <li>
-              Kotlin, Java, Python (FastAPI, Flask, wxPython), PHP (CodeIgniter)
+              Kotlin, Java, Python (FastAPI, Flask, wxPython), PHP (CodeIgniter), Nexacro
             </li>
           </ul>
         </div>
@@ -46,9 +47,8 @@
           <ul>
             <li>
               Kotlin, Java, LiveData, Flow, Compose, Coroutine,
-              CleanArchitecture
+              CleanArchitecture, Firebase, Jetpack, RESTful, WebSocket
             </li>
-            <li>Firebase, Jetpack, RESTful, WebSocket 등</li>
           </ul>
         </div>
         <div class="skills-category">
@@ -68,7 +68,7 @@
         <div class="skills-category">
           <h3>데이터베이스</h3>
           <ul>
-            <li>MySQL, PostgreSQL, Redis</li>
+            <li>MySQL, PostgreSQL, Redis, Oracle</li>
           </ul>
         </div>
         <div class="skills-category">
@@ -90,39 +90,54 @@
         <h2>경력</h2>
         <ul>
           <li>
-            <strong>(주)웹게이트 (2024 - 2024)</strong> - 안드로이드
-            <pre class="pre-content">1. 자사 안드로이드앱 유지보수</pre>
+            <strong>한신대학교 (2025 - 재직중)</strong> - 정보시스템팀 
+            <pre class="pre-content">1. 학사지원업무 및 개발업무
+
+학사관리시스템 유지보수 및 기능 개선
+학생정보 관리, 수강신청, 성적관리 등 학사 관련 시스템 개발
+웹 기반 학사지원 서비스 개발 및 운영
+데이터베이스 설계 및 관리
+사용자 요구사항 분석 및 시스템 개선 작업</pre>
+          </li>
+          <li>
+            <strong>(주)웹게이트 (2024 - 2024)</strong> - S/W파트
+            <pre class="pre-content">1. CCTV 안드로이드 앱 유지보수
+
+CCTV 원격 제어 및 모니터링 안드로이드 앱 유지보수
+앱 성능 최적화 및 안정성 개선 작업</pre>
           </li>
           <li>
             <strong>(주)메일플러그 (2013 - 2022)</strong> -
-            프론트엔드/백엔드/모바일
-            <pre class="pre-content">
-                            1. 웹서비스 개발 및 유지보수 (경력 : 5년)
-                            * 사용 기술: PHP(CodeIgniter), HTML, CSS, JavaScript, JQuery, MySQL 등
-                            * 고객 관리, 상품 신청, 데이터 시각화 등 자사 웹서비스의 주요 기능 개발 및 유지보수
-                            * 사용자 경험(UX) 향상을 위한 반응형 웹 디자인 구현 및 성능 최적화
-                            * 크로스브라우징 이슈 해결 및 코드 품질 향상을 위한 지속적 리팩토링
-                            
-                            2. Ubuntu 기반 백엔드 프로그램 개발 및 유지보수 (경력 : 6년)
-                            * 사용 기술: Python(Flask), Gunicorn, Nginx, PostgreSQL 등
-                            * 'FCM Push 알림 서비스' 제작 및 유지보수, 시스템 부하 관리 최적화
-                            * API 설계, 인증 처리 및 데이터 처리 로직 구현
-                            * Sentry, NewRelic을 활용한 로그 분석과 모니터링을 통해 서비스 안정성 확보
-                            
-                            3. 그룹웨어 안드로이드 앱 개발 및 유지보수 (경력 : 4년)
-                            * 사용 기술: Kotlin, Java, Jetpack, Hilt, Coroutine 등
-                            * 메일, 전자결재, 캘린더, 근태관리, TodoList 등 다양한 그룹웨어 기능 개발 및 유지보수
-                            * Android UI/UX 가이드라인을 준수하며 사용자 친화적 인터페이스 설계
-                            * 비동기 데이터 처리 및 데이터 동기화를 위한 REST API 통합
-                            * 앱 성능 최적화 및 메모리 누수 방지 작업 진행
-                            
-                            4. 윈도우 어플리케이션 개발 및 유지보수 (경력 : 2년)
-                            * 사용 기술: Python(wxPython)
-                            * 기업용 메신저 및 MS-Outlook 계정 설정 프로그램 개발
-                            * 사용자 피드백을 반영한 기능 개선, 작업 흐름 자동화 및 프로세스 최적화
-                            * 다중 사용자 환경에서의 데이터 관리 기능 추가
-                        </pre
-            >
+            개발팀/모바일팀/기업부설연구소 
+            <pre class="pre-content">1. 웹서비스 개발 및 유지보수 (경력 : 5년)
+
+사용 기술: PHP(CodeIgniter), HTML, CSS, JavaScript, JQuery, MySQL 등
+고객 관리, 상품 신청, 데이터 시각화 등 자사 웹서비스의 주요 기능 개발 및 유지보수
+사용자 경험(UX) 향상을 위한 반응형 웹 디자인 구현 및 성능 최적화
+크로스브라우징 이슈 해결 및 코드 품질 향상을 위한 지속적 리팩토링
+
+2. Ubuntu 기반 백엔드 프로그램 개발 및 유지보수 (경력 : 6년)
+
+사용 기술: Python(Flask), Gunicorn, Nginx, PostgreSQL 등
+'FCM Push 알림 서비스' 제작 및 유지보수, 시스템 부하 관리 최적화
+API 설계, 인증 처리 및 데이터 처리 로직 구현
+Sentry, NewRelic을 활용한 로그 분석과 모니터링을 통해 서비스 안정성 확보
+
+3. 그룹웨어 안드로이드 앱 개발 및 유지보수 (경력 : 4년)
+
+사용 기술: Kotlin, Java, Jetpack, Hilt, Coroutine 등
+메일, 전자결재, 캘린더, 근태관리, TodoList 등 다양한 그룹웨어 기능 개발 및 유지보수
+Android UI/UX 가이드라인을 준수하며 사용자 친화적 인터페이스 설계
+비동기 데이터 처리 및 데이터 동기화를 위한 REST API 통합
+앱 성능 최적화 및 메모리 누수 방지 작업 진행
+
+4. 윈도우 어플리케이션 개발 및 유지보수 (경력 : 2년)
+
+사용 기술: Python(wxPython)
+기업용 메신저 및 MS-Outlook 계정 설정 프로그램 개발
+사용자 피드백을 반영한 기능 개선, 작업 흐름 자동화 및 프로세스 최적화
+다중 사용자 환경에서의 데이터 관리 기능 추가</pre>
+            
           </li>
         </ul>
       </section>
@@ -133,90 +148,84 @@
         <ul>
           <li>
             <strong>(주)메일플러그 (2013 - 2022)</strong>
-            <pre class="pre-content">
-                            1. TODO List 안드로이드 네이티브 앱 개발 (2021.10 ~ 2022.07)
-                            * 인원 및 역할 : 3인 / 모바일부분 개발리드
-                            * 사용기술 : Kotlin, Hilt, Coroutine, LiveData, Room, Paging, WebSocket, Firebase 등
-                            * '협업용 할 일 관리 서비스' 출시를 위한 주요 기능 개발
-                            * WebSocket을 활용한 실시간 데이터 동기화 및 오프라인 모드 구현
-                            * 공통 UI 라이브러리 개발로 팀 작업 효율성 향상
-                            * 모바일 UI/UX 가이드 제작
+            <pre class="pre-content">1. TODO List 안드로이드 네이티브 앱 개발 (2021.10 ~ 2022.07)
 
-                            2. 근태관리 안드로이드 네이티브 앱 개발 (2020.09 ~ 2021.08)
-                            * 인원 및 역할 : 3인 / 모바일부분 개발리드
-                            * 사용기술 : Kotlin, Hilt, Coroutine, LiveData, Room, Paging, WorkManager, Firebase 등
-                            * '출퇴근 관리 및 일부 전자결재 기능'을 포함한 서비스 개발
-                            * GPS 및 IP 기반 사용자 출퇴근 검증 로직 구현
-                            * 리마인더 알림 기능 개발
-                            * '근태신청', '휴가신청'과 같은 일부 전자결재 기능 구현
+인원 및 역할 : 3인 / 모바일부분 개발리드
+사용기술 : Kotlin, Hilt, Coroutine, LiveData, Room, Paging, WebSocket, Firebase 등
+'협업용 할 일 관리 서비스' 출시를 위한 주요 기능 개발
+WebSocket을 활용한 실시간 데이터 동기화 및 오프라인 모드 구현
+공통 UI 라이브러리 개발로 팀 작업 효율성 향상
+모바일 UI/UX 가이드 제작
 
-                            3. 그룹웨어 안드로이드 네이티브 앱 개발 (2019.08 ~ 2021.10)
-                            * 인원 및 역할 : 5인 / 개발
-                            * 사용기술 : Kotlin, LiveData, Room, Paging, WebSocket, Firebase 등
-                            * 기업메일, 연락처, 캘린더, 게시판, 전자결재 서비스 등 그룹웨어 기능 개발
-                            * 생체인식(PIN, 패턴, 지문) 및 내부 DB 암호화(SqlCipher) 기능 구현
-                            * Git 오픈소스를 활용한 커스텀 UI 및 공용 라이브러리 제작
-                            * Java에서 Kotlin으로 전환하여 앱 구조 개선
-                            * 텍스트, 이미지 등 각종 데이터 캐싱 로직 구현
-                            * 메일, 게시글, 캘린더 등 상황별 알림 수신 및 데이터 동기화 기능 개발
+2. 근태관리 안드로이드 네이티브 앱 개발 (2020.09 ~ 2021.08)
 
-                            4. FCM Push 알림 서버 개발, 기능개선, 유지보수 (2017 ~ 2022, 개발기간 6개월)
-                            * 인원 및 역할 : 1인 / 개발
-                            * 사용기술 : Python(Flask), PostgreSQL, Redis, Nginx 등
-                            * 모바일 및 서드파티 웹훅 솔루션으로 알림 발송 프로그램 개발
-                            * Redis 기반 Queue 방식 메시지 발송 로직 및 재발송 로직 구현
-                            * 사용자 처리, 알림 발송, 로깅, 동기화 등 자동화 처리 로직 설계
-                            * 테스트 최소단위 분리 및 Script 기반 테스터기 구현
-                            * Sentry, NewRelic을 활용한 실시간 장애, 부하 모니터링 및 대처 체계 마련
-                            * Ubuntu, Gunicorn, Nginx 설정 최적화로 다중 요청 처리 효율성 개선
-                            * RESTful 원칙에 기반한 API 설계 및 JWT(Json Web Token)를 활용한 인증 처리 구현
-                            * 데이터 처리 로직에서 비동기 처리(Async)를 활용하여 성능 최적화
-                            * 7대 서버로 분리 운영, 분당 약 4,000건, 일별 약 210만 건의 알림 처리
+인원 및 역할 : 3인 / 모바일부분 개발리드
+사용기술 : Kotlin, Hilt, Coroutine, LiveData, Room, Paging, WorkManager, Firebase 등
+'출퇴근 관리 및 일부 전자결재 기능'을 포함한 서비스 개발
+GPS 및 IP 기반 사용자 출퇴근 검증 로직 구현
+리마인더 알림 기능 개발
+'근태신청', '휴가신청'과 같은 일부 전자결재 기능 구현
 
-                            5. 웹서비스 개발 및 유지보수 (2014~ 2018)
-                            * 인원 및 역할 : 다수 / 개발
-                            * 사용기술 : PHP(CodeIgniter), JS, JQuery, MySQL 등
-                            * PHP(CodeIgniter) 기반 웹메일 서비스, CMS, VOC 유지보수
-                            * 고객 관리, 상품 신청 등 사용자 맞춤형 기능 구현
-                            * 미디어 쿼리와 플렉스 박스(Flexbox)를 활용한 반응형 웹 디자인 적용으로 다양한 기기 환경 지원
-                            * SQL 쿼리 최적화와 코드 리팩토링을 통해 성능 및 유지보수 효율성 개선
-                            * Python(Flask)을 활용한 메일 본문 검색, 전자결재 백엔드 개발 및 메일 알림 프로그램 제작
+3. 그룹웨어 안드로이드 네이티브 앱 개발 (2019.08 ~ 2021.10)
 
-                            6. 윈도우 애플리케이션 개발 (2014 ~ 2015)
-                            * 인원 및 역할 : 2인 / 개발
-                            * 사용기술 : Python(wxPython), PostgreSQL 등
-                            * '기업 메신저' 및 'Outlook 계정 자동설정 프로그램' 개발 및 유지보수
-                            * 작업 흐름 자동화를 통해 반복 작업 최소화 및 업무 프로세스 최적화
-                            * 다중 사용자 환경에서의 데이터 관리 기능 추가, 사용자별 프로필 데이터 동기화 로직 구현
-              </pre
-            >
+인원 및 역할 : 5인 / 개발
+사용기술 : Kotlin, LiveData, Room, Paging, WebSocket, Firebase 등
+기업메일, 연락처, 캘린더, 게시판, 전자결재 서비스 등 그룹웨어 기능 개발
+생체인식(PIN, 패턴, 지문) 및 내부 DB 암호화(SqlCipher) 기능 구현
+Git 오픈소스를 활용한 커스텀 UI 및 공용 라이브러리 제작
+Java에서 Kotlin으로 전환하여 앱 구조 개선
+텍스트, 이미지 등 각종 데이터 캐싱 로직 구현
+메일, 게시글, 캘린더 등 상황별 알림 수신 및 데이터 동기화 기능 개발
+
+4. FCM Push 알림 서버 개발, 기능개선, 유지보수 (2017 ~ 2022, 개발기간 6개월)
+
+인원 및 역할 : 1인 / 개발
+사용기술 : Python(Flask), PostgreSQL, Redis, Nginx 등
+모바일 및 서드파티 웹훅 솔루션으로 알림 발송 프로그램 개발
+Redis 기반 Queue 방식 메시지 발송 로직 및 재발송 로직 구현
+사용자 처리, 알림 발송, 로깅, 동기화 등 자동화 처리 로직 설계
+테스트 최소단위 분리 및 Script 기반 테스터기 구현
+Sentry, NewRelic을 활용한 실시간 장애, 부하 모니터링 및 대처 체계 마련
+Ubuntu, Gunicorn, Nginx 설정 최적화로 다중 요청 처리 효율성 개선
+RESTful 원칙에 기반한 API 설계 및 JWT(Json Web Token)를 활용한 인증 처리 구현
+데이터 처리 로직에서 비동기 처리(Async)를 활용하여 성능 최적화
+7대 서버로 분리 운영, 분당 약 4,000건, 일별 약 210만 건의 알림 처리
+
+5. 웹서비스 개발 및 유지보수 (2014~ 2018)
+
+인원 및 역할 : 다수 / 개발
+사용기술 : PHP(CodeIgniter), JS, JQuery, MySQL 등
+PHP(CodeIgniter) 기반 웹메일 서비스, CMS, VOC 유지보수
+고객 관리, 상품 신청 등 사용자 맞춤형 기능 구현
+미디어 쿼리와 플렉스 박스(Flexbox)를 활용한 반응형 웹 디자인 적용으로 다양한 기기 환경 지원
+SQL 쿼리 최적화와 코드 리팩토링을 통해 성능 및 유지보수 효율성 개선
+Python(Flask)을 활용한 메일 본문 검색, 전자결재 백엔드 개발 및 메일 알림 프로그램 제작
+
+6. 윈도우 애플리케이션 개발 (2014 ~ 2015)
+
+인원 및 역할 : 2인 / 개발
+사용기술 : Python(wxPython), PostgreSQL 등
+'기업 메신저' 및 'Outlook 계정 자동설정 프로그램' 개발 및 유지보수
+작업 흐름 자동화를 통해 반복 작업 최소화 및 업무 프로세스 최적화
+다중 사용자 환경에서의 데이터 관리 기능 추가, 사용자별 프로필 데이터 동기화 로직 구현</pre>
           </li>
           <li>
             <strong>개인</strong>
             <pre class="pre-content">
-                            1. 잡퀘스트 (2024.12 ~ )
-                            * React + FastAPI 웹 개발
-                            * 입사지원현황 관리 및 데이터 분석제공 서비스
-                            * 기술 및 환경 : React, FastAPI, Ubuntu, Nginx, Uvicorn, PostgreSQL 등
+1. 안드로이드 네이티브앱 개발
 
-                            2. 야구장날씨 (2024.03 ~ 2024.06)
-                            * Compose 기반 안드로이드 네이티브앱 개발
-                            * 대한민국 야구장 실시간 날씨 정보제공 앱
-                            * 기술 및 환경 : Kotlin, Hilt, Flow, Compose, CleanArchitecture, Retrofit 등.
+스포츠, 라이프스타일, 교육 등 다양한 분야의 Compose 기반 안드로이드 앱을 제작
+Google Play Store에 배포 중
+사용기술 : Kotlin, Hilt, Compose, Room, Firbase 등
 
-                            3. 아!그거 (2022.10 ~ 2023.01)
-                            * 안드로이드 네이티브앱 개발
-                            * 간단 체크리스트 앱
-                            * 기술 및 환경 : Kotlin, Hilt, Flow, CleanArchitecture, Room 등.
+2. 웹서비스 개발 (2024.12 ~ )
 
-                            4. 프로야구직관러 (2017.11 ~ 2018.01)
-                            * 안드로이드 네이티브앱, 서버 개발
-                            * 프로야구 직관기록 앱
-                            * 기술 및 환경 
-                            ┕ 안드로이드 : Kotlin, MVVM, LiveData, Retrofit, Room 등.
-                            ┕ 서버 : Python, Flask, Nginx, PostgreSQL, Ubuntu, BeautifulSoup 등.
-                        </pre
-            >
+React + FastAPI 웹 개발
+입사지원현황 관리 및 데이터 분석제공 서비스
+사용기술 및 환경 : React, FastAPI 등
+
+
+</pre>
           </li>
         </ul>
       </section>
@@ -227,14 +236,14 @@
         <ul>
           <li>
             <pre class="pre-content">
-                            * 5인규모의 팀 리드 경험
-                            * Kotlin과 Python 사용에 능숙
-                            * 소스코드는 Git(GitFlow)을 이용하여 관리
-                            * Mac, Windows, Linux 환경에서 개발가능
-                            * Figma, Zeplin을 사용하여 디자이너와의 협업능력 보유
-                            * Confluence 제품을 사용한 문서화 능력 보유
-                            * 다양한 웹기반 프로그램 사용 능력 보유 (UML, DB Modeling, JSON Linter 등..)
-                            * Firebase, Sentry와 같은 다양한 모니터링 툴 사용 능력 보유
+                            5인규모의 팀 리드 경험
+Kotlin과 Python 사용에 능숙
+소스코드는 Git(GitFlow)을 이용하여 관리
+Mac, Windows, Linux 환경에서 개발가능
+Figma, Zeplin을 사용하여 디자이너와의 협업능력 보유
+Confluence 제품을 사용한 문서화 능력 보유
+다양한 웹기반 프로그램 사용 능력 보유 (UML, DB Modeling, JSON Linter 등..)
+Firebase, Sentry와 같은 다양한 모니터링 툴 사용 능력 보유
                         </pre
             >
           </li>
@@ -247,16 +256,16 @@
           <li>
             <strong>자격증</strong>
             <pre class="pre-content">
-                            * SQL개발자 (2024.12.13.)
-                            * 리눅스마스터2급 (2016.12.16)
-                            * 정보처리기사 (2012.11.23)
+                            SQL개발자 (2024.12.13.)
+리눅스마스터2급 (2016.12.16)
+정보처리기사 (2012.11.23)
                         </pre
             >
           </li>
           <li>
             <strong>학력</strong>
             <pre class="pre-content">
-                            * 중앙대학교 : 영어학과(주전공) / 정보시스템학과(복수전공)
+                            중앙대학교 : 영어학과(주전공) / 정보시스템학과(복수전공)
                         </pre
             >
           </li>
@@ -265,7 +274,7 @@
     </div>
 
     <!-- Section 포트폴리오 블럭 -->
-    <div class="container portfolio" id="portfolio">
+    <!-- <div class="container portfolio" id="portfolio">
       <h1 style="margin-bottom: 30px">포트폴리오</h1>
       <section>
         <div class="section-title">
@@ -370,12 +379,12 @@
           <button class="next">▶</button>
         </div>
       </section>
-    </div>
+    </div> -->
 
     <footer class="footer">
       <p>
         &copy; 2025 정회남. All rights reserved.<br />
-        최종업데이트 : 2025.03.17.
+        최종업데이트 : 2025.07.19.
       </p>
     </footer>
 
@@ -435,7 +444,10 @@
           if (line.includes("*")) {
             return `<span class="indented-line-depth1">${line}</span>`; // 특정 기호(*)가 포함된 줄에만 클래스 추가
           } else if (line.includes("┕")) {
-            return `<span class="indented-line-depth2">${line}</span>`; // 특정 기호(*)가 포함된 줄에만 클래스 추가
+            return `<span class="indented-line-depth2">${line}</span>`; // 특정 기호(┕)가 포함된 줄에만 클래스 추가
+          } else if (line.trim() !== "" && !line.match(/^\d+\./)) {
+            // '*'가 없지만 빈 줄이 아니고 숫자로 시작하지 않는 줄에도 동일한 스타일 적용
+            return `<span class="indented-line-depth1">${line}</span>`;
           }
           return line;
         });
@@ -445,55 +457,231 @@
       // 'PDF다운로드' 버튼이벤트
       document.getElementById("download-pdf").addEventListener("click", () => {
         const { jsPDF } = window.jspdf;
+        
+        // PDF 생성 전 로딩 표시
+        const button = document.getElementById("download-pdf");
+        const originalText = button.textContent;
+        button.textContent = "PDF 생성 중...";
+        button.disabled = true;
 
-        html2canvas(document.querySelector(".container"), {
-          scale: 2, // 해상도 높이기
-          useCORS: true, // 외부 리소스 로드 허용
-        })
-          .then((canvas) => {
-            const imgData = canvas.toDataURL("image/png"); // 캔버스를 이미지로 변환
-            const pdf = new jsPDF("p", "mm", "a4"); // PDF 객체 생성
+        // 포트폴리오 섹션 임시 숨김 (PDF에서 제외)
+        const portfolioSection = document.querySelector(".portfolio");
+        const originalDisplay = portfolioSection.style.display;
+        portfolioSection.style.display = "none";
 
-            const imgWidth = 190; // PDF 너비 (여백 고려)
-            const pageHeight = 297; // A4 높이
-            const imgHeight = (canvas.height * imgWidth) / canvas.width; // 이미지 비율 계산
-            let heightLeft = imgHeight;
+        // 네비게이션 바도 임시 숨김
+        const navbar = document.querySelector(".navbar-container");
+        const navbarOriginalDisplay = navbar.style.display;
+        navbar.style.display = "none";
 
-            let position = 0;
+        // 푸터도 임시 숨김
+        const footer = document.querySelector(".footer");
+        const footerOriginalDisplay = footer.style.display;
+        footer.style.display = "none";
 
-            // 첫 페이지 추가
-            pdf.addImage(
-              imgData,
-              "PNG",
-              10,
-              position + 10,
-              imgWidth,
-              imgHeight
-            );
-            heightLeft -= pageHeight;
+        // 컨테이너에 PDF용 스타일 적용
+        const container = document.querySelector(".container");
+        const originalBackground = container.style.background;
+        const originalBoxShadow = container.style.boxShadow;
+        container.style.background = "white";
+        container.style.boxShadow = "none";
+        
+        // PDF 모드 클래스 추가
+        document.body.classList.add("pdf-mode");
 
-            // 나머지 페이지 추가
-            while (heightLeft > 0) {
-              position -= pageHeight;
-              pdf.addPage();
-              pdf.addImage(
-                imgData,
-                "PNG",
-                10,
-                position + 10,
-                imgWidth,
-                imgHeight
-              );
-              heightLeft -= pageHeight;
-            }
+        // 모든 섹션에 흰색 배경 적용
+        const sections = document.querySelectorAll("section");
+        const originalSectionStyles = [];
+        sections.forEach((section, index) => {
+          originalSectionStyles[index] = {
+            background: section.style.background,
+            boxShadow: section.style.boxShadow,
+            border: section.style.border
+          };
+          section.style.background = "white";
+          section.style.boxShadow = "none";
+          section.style.border = "1px solid #ddd";
+        });
 
-            // PDF 저장
-            pdf.save("경력기술서(정회남).pdf");
+        // 스킬 카테고리에 흰색 배경 적용
+        const skillCategories = document.querySelectorAll(".skills-category");
+        const originalSkillStyles = [];
+        skillCategories.forEach((category, index) => {
+          originalSkillStyles[index] = {
+            background: category.style.background,
+            boxShadow: category.style.boxShadow,
+            border: category.style.border
+          };
+          category.style.background = "white";
+          category.style.boxShadow = "none";
+          category.style.border = "1px solid #ddd";
+        });
+
+        // pre-content에 흰색 배경 적용
+        const preContents = document.querySelectorAll(".pre-content");
+        const originalPreStyles = [];
+        preContents.forEach((pre, index) => {
+          originalPreStyles[index] = {
+            background: pre.style.background,
+            border: pre.style.border
+          };
+          pre.style.background = "white";
+          pre.style.border = "1px solid #eee";
+        });
+
+        // ul li에 흰색 배경 적용
+        const listItems = document.querySelectorAll("ul li");
+        const originalLiStyles = [];
+        listItems.forEach((li, index) => {
+          originalLiStyles[index] = {
+            background: li.style.background,
+            boxShadow: li.style.boxShadow,
+            border: li.style.border
+          };
+          li.style.background = "white";
+          li.style.boxShadow = "none";
+          li.style.border = "1px solid #eee";
+        });
+
+        // 잠시 대기 후 캡처 (스타일 적용 완료 대기)
+        setTimeout(() => {
+          html2canvas(container, {
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: "#ffffff",
+            logging: false,
+            width: container.offsetWidth,
+            height: container.offsetHeight,
+            scrollX: 0,
+            scrollY: 0,
+            windowWidth: document.documentElement.offsetWidth,
+            windowHeight: document.documentElement.offsetHeight,
+            foreignObjectRendering: true
           })
-          .catch((err) => {
-            console.error("PDF 생성 중 오류 발생:", err);
-            alert("생성중 실패하였습니다.");
-          });
+            .then((canvas) => {
+              // 모든 스타일 복원
+              portfolioSection.style.display = originalDisplay;
+              navbar.style.display = navbarOriginalDisplay;
+              footer.style.display = footerOriginalDisplay;
+              
+              container.style.background = originalBackground;
+              container.style.boxShadow = originalBoxShadow;
+              
+              // PDF 모드 클래스 제거
+              document.body.classList.remove("pdf-mode");
+              
+              sections.forEach((section, index) => {
+                if (originalSectionStyles[index]) {
+                  section.style.background = originalSectionStyles[index].background;
+                  section.style.boxShadow = originalSectionStyles[index].boxShadow;
+                  section.style.border = originalSectionStyles[index].border;
+                }
+              });
+              
+              skillCategories.forEach((category, index) => {
+                if (originalSkillStyles[index]) {
+                  category.style.background = originalSkillStyles[index].background;
+                  category.style.boxShadow = originalSkillStyles[index].boxShadow;
+                  category.style.border = originalSkillStyles[index].border;
+                }
+              });
+              
+              preContents.forEach((pre, index) => {
+                if (originalPreStyles[index]) {
+                  pre.style.background = originalPreStyles[index].background;
+                  pre.style.border = originalPreStyles[index].border;
+                }
+              });
+              
+              listItems.forEach((li, index) => {
+                if (originalLiStyles[index]) {
+                  li.style.background = originalLiStyles[index].background;
+                  li.style.boxShadow = originalLiStyles[index].boxShadow;
+                  li.style.border = originalLiStyles[index].border;
+                }
+              });
+              
+              const imgData = canvas.toDataURL("image/png", 1.0);
+              const pdf = new jsPDF("p", "mm", "a4");
+
+              const imgWidth = 190;
+              const pageHeight = 277; // 여백 고려하여 실제 사용 가능한 높이
+              const imgHeight = (canvas.height * imgWidth) / canvas.width;
+              
+              // 첫 페이지 추가
+              pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+              
+              // 추가 페이지가 필요한 경우
+              if (imgHeight > pageHeight) {
+                const remainingHeight = imgHeight - pageHeight;
+                const additionalPages = Math.ceil(remainingHeight / pageHeight);
+                
+                for (let i = 0; i < additionalPages; i++) {
+                  pdf.addPage();
+                  const yOffset = -(pageHeight + (i * pageHeight));
+                  pdf.addImage(imgData, "PNG", 10, yOffset, imgWidth, imgHeight);
+                }
+              }
+
+              // PDF 저장
+              pdf.save("경력기술서(정회남).pdf");
+              
+              // 버튼 상태 복원
+              button.textContent = originalText;
+              button.disabled = false;
+            })
+            .catch((err) => {
+              // 에러 발생 시 모든 스타일 복원
+              portfolioSection.style.display = originalDisplay;
+              navbar.style.display = navbarOriginalDisplay;
+              footer.style.display = footerOriginalDisplay;
+              
+              container.style.background = originalBackground;
+              container.style.boxShadow = originalBoxShadow;
+              
+              // PDF 모드 클래스 제거
+              document.body.classList.remove("pdf-mode");
+              
+              sections.forEach((section, index) => {
+                if (originalSectionStyles[index]) {
+                  section.style.background = originalSectionStyles[index].background;
+                  section.style.boxShadow = originalSectionStyles[index].boxShadow;
+                  section.style.border = originalSectionStyles[index].border;
+                }
+              });
+              
+              skillCategories.forEach((category, index) => {
+                if (originalSkillStyles[index]) {
+                  category.style.background = originalSkillStyles[index].background;
+                  category.style.boxShadow = originalSkillStyles[index].boxShadow;
+                  category.style.border = originalSkillStyles[index].border;
+                }
+              });
+              
+              preContents.forEach((pre, index) => {
+                if (originalPreStyles[index]) {
+                  pre.style.background = originalPreStyles[index].background;
+                  pre.style.border = originalPreStyles[index].border;
+                }
+              });
+              
+              listItems.forEach((li, index) => {
+                if (originalLiStyles[index]) {
+                  li.style.background = originalLiStyles[index].background;
+                  li.style.boxShadow = originalLiStyles[index].boxShadow;
+                  li.style.border = originalLiStyles[index].border;
+                }
+              });
+              
+              console.error("PDF 생성 중 오류 발생:", err);
+              alert("PDF 생성 중 오류가 발생했습니다. 다시 시도해주세요.");
+              
+              // 버튼 상태 복원
+              button.textContent = originalText;
+              button.disabled = false;
+            });
+        }, 100);
       });
     </script>
   </body>
