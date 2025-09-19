@@ -692,3 +692,24 @@ html {
   background: var(--primary-color);
   color: white;
 }
+
+/* Blog link styles */
+.blog-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.blog-link:hover {
+  color: var(--accent-light);
+  border-bottom-color: var(--accent-color);
+  text-decoration: none;
+}
+
+.blog-link:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
