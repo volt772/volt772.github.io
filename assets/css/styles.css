@@ -535,7 +535,7 @@ ul li strong {
   background: var(--accent-color);
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.45rem 1rem;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
