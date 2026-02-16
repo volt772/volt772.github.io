@@ -18,9 +18,9 @@
           <!-- <a href="#portfolio" class="smooth-scroll">포트폴리오</a> -->
         </div>
         <!-- PDF 다운로드 버튼 -->
-        <!-- <div class="buttons">
+        <div class="buttons">
           <button id="download-pdf">PDF 다운로드</button>
-        </div> -->
+        </div>
       </div>
     </div>
 
@@ -32,7 +32,7 @@
       </p>
 
       <!-- Section 경력 -->
-      <section>
+      <section id="career" class="pdf-section">
         <h2>경력</h2>
         <ul>
           <li>
@@ -72,7 +72,7 @@ PHP(CodeIgniter) 웹서비스 유지보수 및 기능 개선
       </section>
 
       <!-- Section 프로젝트 -->
-      <section>
+      <section id="skills" class="pdf-section">
         <h2>주요업무 및 프로젝트</h2>
         <ul>
           <li>
@@ -188,7 +188,7 @@ Python(Flask) 기반 전자결재 백엔드 및 메일 검색·알림 모듈 추
       </section>
 
       <!-- Section 역량-->
-      <section>
+      <section id="competency" class="pdf-section">
         <h2>역량</h2>
         <ul>
           <li>
@@ -224,7 +224,7 @@ Java → Kotlin 마이그레이션 및 기존 코드 구조 개선 경험
       </section>
 
       <!-- Section 전문보유 및 사용기술 -->
-      <section>
+      <section id="tech" class="pdf-section">
         <h2>전문보유 및 사용기술</h2>
         <div class="skills-category">
           <h3>Backend</h3>
@@ -542,249 +542,342 @@ SQL개발자 (2024.12.13.)
       });
 
       // 'PDF다운로드' 버튼이벤트
-      document.getElementById("download-pdf").addEventListener("click", () => {
+      document.getElementById("download-pdf").addEventListener("click", async () => {
         const { jsPDF } = window.jspdf;
-
-        // PDF 생성 전 로딩 표시
         const button = document.getElementById("download-pdf");
         const originalText = button.textContent;
-        button.textContent = "PDF 생성 중...";
-        button.disabled = true;
 
-        // 포트폴리오 섹션 임시 숨김 (PDF에서 제외)
-        const portfolioSection = document.querySelector(".portfolio");
-        const originalDisplay = portfolioSection.style.display;
-        portfolioSection.style.display = "none";
+        try {
+          button.textContent = "PDF 생성 중...";
+          button.disabled = true;
 
-        // 네비게이션 바도 임시 숨김
-        const navbar = document.querySelector(".navbar-container");
-        const navbarOriginalDisplay = navbar.style.display;
-        navbar.style.display = "none";
+          // PDF 모드 ON (CSS로만 제어)
+          document.body.classList.add("pdf-mode");
 
-        // 푸터도 임시 숨김
-        const footer = document.querySelector(".footer");
-        const footerOriginalDisplay = footer.style.display;
-        footer.style.display = "none";
+          // 캡처 대상: career 컨테이너(네비 제외)
+          const container = document.querySelector(".container");
 
-        // 컨테이너에 PDF용 스타일 적용
-        const container = document.querySelector(".container");
-        const originalBackground = container.style.background;
-        const originalBoxShadow = container.style.boxShadow;
-        container.style.background = "white";
-        container.style.boxShadow = "none";
+          // 렌더 안정화(폰트/레이아웃)
+          await document.fonts?.ready;
+          await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
 
-        // PDF 모드 클래스 추가
-        document.body.classList.add("pdf-mode");
-
-        // 모든 섹션에 흰색 배경 적용
-        const sections = document.querySelectorAll("section");
-        const originalSectionStyles = [];
-        sections.forEach((section, index) => {
-          originalSectionStyles[index] = {
-            background: section.style.background,
-            boxShadow: section.style.boxShadow,
-            border: section.style.border,
-          };
-          section.style.background = "white";
-          section.style.boxShadow = "none";
-          section.style.border = "1px solid #ddd";
-        });
-
-        // 스킬 카테고리에 흰색 배경 적용
-        const skillCategories = document.querySelectorAll(".skills-category");
-        const originalSkillStyles = [];
-        skillCategories.forEach((category, index) => {
-          originalSkillStyles[index] = {
-            background: category.style.background,
-            boxShadow: category.style.boxShadow,
-            border: category.style.border,
-          };
-          category.style.background = "white";
-          category.style.boxShadow = "none";
-          category.style.border = "1px solid #ddd";
-        });
-
-        // pre-content에 흰색 배경 적용
-        const preContents = document.querySelectorAll(".pre-content");
-        const originalPreStyles = [];
-        preContents.forEach((pre, index) => {
-          originalPreStyles[index] = {
-            background: pre.style.background,
-            border: pre.style.border,
-          };
-          pre.style.background = "white";
-          pre.style.border = "1px solid #eee";
-        });
-
-        // ul li에 흰색 배경 적용
-        const listItems = document.querySelectorAll("ul li");
-        const originalLiStyles = [];
-        listItems.forEach((li, index) => {
-          originalLiStyles[index] = {
-            background: li.style.background,
-            boxShadow: li.style.boxShadow,
-            border: li.style.border,
-          };
-          li.style.background = "white";
-          li.style.boxShadow = "none";
-          li.style.border = "1px solid #eee";
-        });
-
-        // 잠시 대기 후 캡처 (스타일 적용 완료 대기)
-        setTimeout(() => {
-          html2canvas(container, {
+          const canvas = await html2canvas(container, {
             scale: 2,
             useCORS: true,
-            allowTaint: true,
             backgroundColor: "#ffffff",
             logging: false,
-            width: container.offsetWidth,
-            height: container.offsetHeight,
             scrollX: 0,
-            scrollY: 0,
-            windowWidth: document.documentElement.offsetWidth,
-            windowHeight: document.documentElement.offsetHeight,
-            foreignObjectRendering: true,
-          })
-            .then((canvas) => {
-              // 모든 스타일 복원
-              portfolioSection.style.display = originalDisplay;
-              navbar.style.display = navbarOriginalDisplay;
-              footer.style.display = footerOriginalDisplay;
+            scrollY: -window.scrollY,
+            windowWidth: document.documentElement.clientWidth,
+            windowHeight: document.documentElement.clientHeight,
+          });
 
-              container.style.background = originalBackground;
-              container.style.boxShadow = originalBoxShadow;
+          const pdf = new jsPDF("p", "mm", "a4");
 
-              // PDF 모드 클래스 제거
-              document.body.classList.remove("pdf-mode");
+          // A4(mm) 기준 출력 영역(여백 포함)
+          const pageWidth = 210;
+          const pageHeight = 297;
+          const margin = 10;
 
-              sections.forEach((section, index) => {
-                if (originalSectionStyles[index]) {
-                  section.style.background =
-                    originalSectionStyles[index].background;
-                  section.style.boxShadow =
-                    originalSectionStyles[index].boxShadow;
-                  section.style.border = originalSectionStyles[index].border;
-                }
-              });
+          const usableWidth = pageWidth - margin * 2;
+          const usableHeight = pageHeight - margin * 2;
 
-              skillCategories.forEach((category, index) => {
-                if (originalSkillStyles[index]) {
-                  category.style.background =
-                    originalSkillStyles[index].background;
-                  category.style.boxShadow =
-                    originalSkillStyles[index].boxShadow;
-                  category.style.border = originalSkillStyles[index].border;
-                }
-              });
+          // 캔버스(px) -> pdf(mm) 변환 비율
+          const imgWidthMm = usableWidth;
+          const imgHeightMm = (canvas.height * imgWidthMm) / canvas.width;
 
-              preContents.forEach((pre, index) => {
-                if (originalPreStyles[index]) {
-                  pre.style.background = originalPreStyles[index].background;
-                  pre.style.border = originalPreStyles[index].border;
-                }
-              });
+          // 한 페이지에 들어갈 캔버스 높이(px)
+          const pageCanvasHeightPx = Math.floor((canvas.width * usableHeight) / imgWidthMm);
 
-              listItems.forEach((li, index) => {
-                if (originalLiStyles[index]) {
-                  li.style.background = originalLiStyles[index].background;
-                  li.style.boxShadow = originalLiStyles[index].boxShadow;
-                  li.style.border = originalLiStyles[index].border;
-                }
-              });
+          let renderedHeight = 0;
+          let pageIndex = 0;
 
-              const imgData = canvas.toDataURL("image/png", 1.0);
-              const pdf = new jsPDF("p", "mm", "a4");
+          while (renderedHeight < canvas.height) {
+            // 페이지별로 canvas를 잘라서 넣는다 (겹침/깨짐 방지)
+            const sliceHeight = Math.min(pageCanvasHeightPx, canvas.height - renderedHeight);
 
-              const imgWidth = 190;
-              const pageHeight = 277; // 여백 고려하여 실제 사용 가능한 높이
-              const imgHeight = (canvas.height * imgWidth) / canvas.width;
+            const pageCanvas = document.createElement("canvas");
+            pageCanvas.width = canvas.width;
+            pageCanvas.height = sliceHeight;
 
-              // 첫 페이지 추가
-              pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+            const ctx = pageCanvas.getContext("2d");
+            ctx.drawImage(
+              canvas,
+              0,
+              renderedHeight,
+              canvas.width,
+              sliceHeight,
+              0,
+              0,
+              canvas.width,
+              sliceHeight
+            );
 
-              // 추가 페이지가 필요한 경우
-              if (imgHeight > pageHeight) {
-                const remainingHeight = imgHeight - pageHeight;
-                const additionalPages = Math.ceil(remainingHeight / pageHeight);
+            const imgData = pageCanvas.toDataURL("image/png", 1.0);
+            const sliceHeightMm = (sliceHeight * imgWidthMm) / canvas.width;
 
-                for (let i = 0; i < additionalPages; i++) {
-                  pdf.addPage();
-                  const yOffset = -(pageHeight + i * pageHeight);
-                  pdf.addImage(
-                    imgData,
-                    "PNG",
-                    10,
-                    yOffset,
-                    imgWidth,
-                    imgHeight,
-                  );
-                }
-              }
+            if (pageIndex > 0) pdf.addPage();
+            pdf.addImage(imgData, "PNG", margin, margin, imgWidthMm, sliceHeightMm);
 
-              // PDF 저장
-              pdf.save("경력기술서(정회남).pdf");
+            renderedHeight += sliceHeight;
+            pageIndex++;
+          }
 
-              // 버튼 상태 복원
-              button.textContent = originalText;
-              button.disabled = false;
-            })
-            .catch((err) => {
-              // 에러 발생 시 모든 스타일 복원
-              portfolioSection.style.display = originalDisplay;
-              navbar.style.display = navbarOriginalDisplay;
-              footer.style.display = footerOriginalDisplay;
-
-              container.style.background = originalBackground;
-              container.style.boxShadow = originalBoxShadow;
-
-              // PDF 모드 클래스 제거
-              document.body.classList.remove("pdf-mode");
-
-              sections.forEach((section, index) => {
-                if (originalSectionStyles[index]) {
-                  section.style.background =
-                    originalSectionStyles[index].background;
-                  section.style.boxShadow =
-                    originalSectionStyles[index].boxShadow;
-                  section.style.border = originalSectionStyles[index].border;
-                }
-              });
-
-              skillCategories.forEach((category, index) => {
-                if (originalSkillStyles[index]) {
-                  category.style.background =
-                    originalSkillStyles[index].background;
-                  category.style.boxShadow =
-                    originalSkillStyles[index].boxShadow;
-                  category.style.border = originalSkillStyles[index].border;
-                }
-              });
-
-              preContents.forEach((pre, index) => {
-                if (originalPreStyles[index]) {
-                  pre.style.background = originalPreStyles[index].background;
-                  pre.style.border = originalPreStyles[index].border;
-                }
-              });
-
-              listItems.forEach((li, index) => {
-                if (originalLiStyles[index]) {
-                  li.style.background = originalLiStyles[index].background;
-                  li.style.boxShadow = originalLiStyles[index].boxShadow;
-                  li.style.border = originalLiStyles[index].border;
-                }
-              });
-
-              console.error("PDF 생성 중 오류 발생:", err);
-              alert("PDF 생성 중 오류가 발생했습니다. 다시 시도해주세요.");
-
-              // 버튼 상태 복원
-              button.textContent = originalText;
-              button.disabled = false;
-            });
-        }, 100);
+          pdf.save("경력기술서(정회남).pdf");
+        } catch (err) {
+          console.error(err);
+          alert("PDF 생성 중 오류가 발생했습니다. 다시 시도해주세요.");
+        } finally {
+          document.body.classList.remove("pdf-mode");
+          button.textContent = originalText;
+          button.disabled = false;
+        }
       });
+
+
+      // document.getElementById("download-pdf").addEventListener("click", () => {
+      //   const { jsPDF } = window.jspdf;
+
+        // PDF 생성 전 로딩 표시
+      //   const button = document.getElementById("download-pdf");
+      //   const originalText = button.textContent;
+      //   button.textContent = "PDF 생성 중...";
+      //   button.disabled = true;
+
+      //   // 포트폴리오 섹션 임시 숨김 (PDF에서 제외)
+      //   const portfolioSection = document.querySelector(".portfolio");
+      //   const originalDisplay = portfolioSection.style.display;
+      //   portfolioSection.style.display = "none";
+
+      //   // 네비게이션 바도 임시 숨김
+      //   const navbar = document.querySelector(".navbar-container");
+      //   const navbarOriginalDisplay = navbar.style.display;
+      //   navbar.style.display = "none";
+
+      //   // 푸터도 임시 숨김
+      //   const footer = document.querySelector(".footer");
+      //   const footerOriginalDisplay = footer.style.display;
+      //   footer.style.display = "none";
+
+      //   // 컨테이너에 PDF용 스타일 적용
+      //   const container = document.querySelector(".container");
+      //   const originalBackground = container.style.background;
+      //   const originalBoxShadow = container.style.boxShadow;
+      //   container.style.background = "white";
+      //   container.style.boxShadow = "none";
+
+      //   // PDF 모드 클래스 추가
+      //   document.body.classList.add("pdf-mode");
+
+      //   // 모든 섹션에 흰색 배경 적용
+      //   const sections = document.querySelectorAll("section");
+      //   const originalSectionStyles = [];
+      //   sections.forEach((section, index) => {
+      //     originalSectionStyles[index] = {
+      //       background: section.style.background,
+      //       boxShadow: section.style.boxShadow,
+      //       border: section.style.border,
+      //     };
+      //     section.style.background = "white";
+      //     section.style.boxShadow = "none";
+      //     section.style.border = "1px solid #ddd";
+      //   });
+
+      //   // 스킬 카테고리에 흰색 배경 적용
+      //   const skillCategories = document.querySelectorAll(".skills-category");
+      //   const originalSkillStyles = [];
+      //   skillCategories.forEach((category, index) => {
+      //     originalSkillStyles[index] = {
+      //       background: category.style.background,
+      //       boxShadow: category.style.boxShadow,
+      //       border: category.style.border,
+      //     };
+      //     category.style.background = "white";
+      //     category.style.boxShadow = "none";
+      //     category.style.border = "1px solid #ddd";
+      //   });
+
+      //   // pre-content에 흰색 배경 적용
+      //   const preContents = document.querySelectorAll(".pre-content");
+      //   const originalPreStyles = [];
+      //   preContents.forEach((pre, index) => {
+      //     originalPreStyles[index] = {
+      //       background: pre.style.background,
+      //       border: pre.style.border,
+      //     };
+      //     pre.style.background = "white";
+      //     pre.style.border = "1px solid #eee";
+      //   });
+
+      //   // ul li에 흰색 배경 적용
+      //   const listItems = document.querySelectorAll("ul li");
+      //   const originalLiStyles = [];
+      //   listItems.forEach((li, index) => {
+      //     originalLiStyles[index] = {
+      //       background: li.style.background,
+      //       boxShadow: li.style.boxShadow,
+      //       border: li.style.border,
+      //     };
+      //     li.style.background = "white";
+      //     li.style.boxShadow = "none";
+      //     li.style.border = "1px solid #eee";
+      //   });
+
+      //   // 잠시 대기 후 캡처 (스타일 적용 완료 대기)
+      //   setTimeout(() => {
+      //     html2canvas(container, {
+      //       scale: 2,
+      //       useCORS: true,
+      //       allowTaint: true,
+      //       backgroundColor: "#ffffff",
+      //       logging: false,
+      //       width: container.offsetWidth,
+      //       height: container.offsetHeight,
+      //       scrollX: 0,
+      //       scrollY: 0,
+      //       windowWidth: document.documentElement.offsetWidth,
+      //       windowHeight: document.documentElement.offsetHeight,
+      //       foreignObjectRendering: true,
+      //     })
+      //       .then((canvas) => {
+      //         // 모든 스타일 복원
+      //         portfolioSection.style.display = originalDisplay;
+      //         navbar.style.display = navbarOriginalDisplay;
+      //         footer.style.display = footerOriginalDisplay;
+
+      //         container.style.background = originalBackground;
+      //         container.style.boxShadow = originalBoxShadow;
+
+      //         // PDF 모드 클래스 제거
+      //         document.body.classList.remove("pdf-mode");
+
+      //         sections.forEach((section, index) => {
+      //           if (originalSectionStyles[index]) {
+      //             section.style.background =
+      //               originalSectionStyles[index].background;
+      //             section.style.boxShadow =
+      //               originalSectionStyles[index].boxShadow;
+      //             section.style.border = originalSectionStyles[index].border;
+      //           }
+      //         });
+
+      //         skillCategories.forEach((category, index) => {
+      //           if (originalSkillStyles[index]) {
+      //             category.style.background =
+      //               originalSkillStyles[index].background;
+      //             category.style.boxShadow =
+      //               originalSkillStyles[index].boxShadow;
+      //             category.style.border = originalSkillStyles[index].border;
+      //           }
+      //         });
+
+      //         preContents.forEach((pre, index) => {
+      //           if (originalPreStyles[index]) {
+      //             pre.style.background = originalPreStyles[index].background;
+      //             pre.style.border = originalPreStyles[index].border;
+      //           }
+      //         });
+
+      //         listItems.forEach((li, index) => {
+      //           if (originalLiStyles[index]) {
+      //             li.style.background = originalLiStyles[index].background;
+      //             li.style.boxShadow = originalLiStyles[index].boxShadow;
+      //             li.style.border = originalLiStyles[index].border;
+      //           }
+      //         });
+
+      //         const imgData = canvas.toDataURL("image/png", 1.0);
+      //         const pdf = new jsPDF("p", "mm", "a4");
+
+      //         const imgWidth = 190;
+      //         const pageHeight = 277; // 여백 고려하여 실제 사용 가능한 높이
+      //         const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      //         // 첫 페이지 추가
+      //         pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+
+      //         // 추가 페이지가 필요한 경우
+      //         if (imgHeight > pageHeight) {
+      //           const remainingHeight = imgHeight - pageHeight;
+      //           const additionalPages = Math.ceil(remainingHeight / pageHeight);
+
+      //           for (let i = 0; i < additionalPages; i++) {
+      //             pdf.addPage();
+      //             const yOffset = -(pageHeight + i * pageHeight);
+      //             pdf.addImage(
+      //               imgData,
+      //               "PNG",
+      //               10,
+      //               yOffset,
+      //               imgWidth,
+      //               imgHeight,
+      //             );
+      //           }
+      //         }
+
+      //         // PDF 저장
+      //         pdf.save("경력기술서(정회남).pdf");
+
+      //         // 버튼 상태 복원
+      //         button.textContent = originalText;
+      //         button.disabled = false;
+      //       })
+      //       .catch((err) => {
+      //         // 에러 발생 시 모든 스타일 복원
+      //         portfolioSection.style.display = originalDisplay;
+      //         navbar.style.display = navbarOriginalDisplay;
+      //         footer.style.display = footerOriginalDisplay;
+
+      //         container.style.background = originalBackground;
+      //         container.style.boxShadow = originalBoxShadow;
+
+      //         // PDF 모드 클래스 제거
+      //         document.body.classList.remove("pdf-mode");
+
+      //         sections.forEach((section, index) => {
+      //           if (originalSectionStyles[index]) {
+      //             section.style.background =
+      //               originalSectionStyles[index].background;
+      //             section.style.boxShadow =
+      //               originalSectionStyles[index].boxShadow;
+      //             section.style.border = originalSectionStyles[index].border;
+      //           }
+      //         });
+
+      //         skillCategories.forEach((category, index) => {
+      //           if (originalSkillStyles[index]) {
+      //             category.style.background =
+      //               originalSkillStyles[index].background;
+      //             category.style.boxShadow =
+      //               originalSkillStyles[index].boxShadow;
+      //             category.style.border = originalSkillStyles[index].border;
+      //           }
+      //         });
+
+      //         preContents.forEach((pre, index) => {
+      //           if (originalPreStyles[index]) {
+      //             pre.style.background = originalPreStyles[index].background;
+      //             pre.style.border = originalPreStyles[index].border;
+      //           }
+      //         });
+
+      //         listItems.forEach((li, index) => {
+      //           if (originalLiStyles[index]) {
+      //             li.style.background = originalLiStyles[index].background;
+      //             li.style.boxShadow = originalLiStyles[index].boxShadow;
+      //             li.style.border = originalLiStyles[index].border;
+      //           }
+      //         });
+
+      //         console.error("PDF 생성 중 오류 발생:", err);
+      //         alert("PDF 생성 중 오류가 발생했습니다. 다시 시도해주세요.");
+
+      //         // 버튼 상태 복원
+      //         button.textContent = originalText;
+      //         button.disabled = false;
+      //       });
+      //   }, 100);
+      // });
     </script>
   </body>
 </html>
