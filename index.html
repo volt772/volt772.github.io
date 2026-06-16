@@ -17,10 +17,6 @@
           <a href="#career" class="smooth-scroll">경력기술서</a>
           <!-- <a href="#portfolio" class="smooth-scroll">포트폴리오</a> -->
         </div>
-        <!-- PDF 다운로드 버튼 -->
-        <div class="buttons">
-          <button id="download-pdf">PDF 다운로드</button>
-        </div>
       </div>
     </div>
 
@@ -31,447 +27,99 @@
         <a href="mailto:volt772@naver.com">volt772@naver.com</a>
       </p>
 
-      <!-- Section 경력 -->
-      <section id="career" class="pdf-section">
-        <h2>경력</h2>
+      <!-- Section 프로젝트 -->
+      <section id="skills" class="pdf-section">
+        <h2>1. Nexacro기반 학사행정 시스템 운영 및 데이터 처리</h2>
         <ul>
           <li>
-            <strong>한신대학교 (2025 - 재직중)</strong> - 정보시스템팀
             <pre class="pre-content">
-학사·행정 ERP 시스템 운영 및 기능 개선
-Spring Boot + MyBatis 기반 백엔드 로직 구현 및 유지보수
-Nexacro 연계 API 개발 및 운영 환경 대응
-Oracle DB 기반 트랜잭션 처리 구조 개선 및 데이터 정합성 관리
+1. 업무 내용
+
+Nexacro Grid 및 Dataset 기반 학사 데이터 조회/수정 화면 운영
+Dataset-Transaction-MyBatis-DB로 이어지는 데이터 처리 흐름 관리
+사용자 입력 데이터가 서버 및 DB에 정상 반영되도록 데이터 흐름 검증 및 보완
+수강/학적/등록 등 주요 행정 데이터 처리 기능 유지보수
+
+2. 수행 내용
+
+데이터셋 변경 상태(추가/수정/삭제)에 따라 저장 처리 로직 구현
+ Transaction 기반 서버 연동 및 결과 데이터셋 재바인딩 처리
+ MyBatis(XML) 기반 데이터 조회·저장 로직 유지보수
+ 화면–서버–DB 간 데이터 흐름 정합성 유지 및 오류 대응
+
+3. 기술
+
+Nexacro 17, MyBatis, Spring Boot, Oracle
+
 </pre
             >
-          </li>
-          <li>
-            <strong>(주)웹게이트 (2024 - 2024)</strong> - S/W파트
-            <pre class="pre-content">
-안드로이드 기반 CCTV 제어 애플리케이션 개발 및 유지보수
-현장 장비 제어 로직과 모바일 UI 연계 기능 구현
-실사용 환경 오류 분석 및 안정성 개선
-</pre
-            >
-          </li>
-          <li>
-            <strong>(주)메일플러그 (2013 - 2022)</strong> -
-            개발팀/모바일팀/기업부설연구소
-            <pre class="pre-content">
-Kotlin 기반 안드로이드 그룹웨어 앱 핵심 기능 설계·구현
-메일·전자결재·근태·캘린더 등 기업 업무 기능 전반 개발
-MVVM 및 Clean Architecture 적용을 통한 구조 표준화
-WebSocket 기반 실시간 동기화 및 오프라인 처리 구현
-대규모 사용자 환경 성능 이슈 분석 및 안정성 개선
-Python(Flask) 기반 FCM Push 서버 및 REST API 설계·구현
-PHP(CodeIgniter) 웹서비스 유지보수 및 기능 개선
-</pre
-            >
+            <img
+              src="assets/imgs/ajou1.png"
+              alt=""
+              style="
+                width: auto;
+                height: auto;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+              "
+              class="service-img"
+            />
           </li>
         </ul>
       </section>
 
       <!-- Section 프로젝트 -->
       <section id="skills" class="pdf-section">
-        <h2>주요업무 및 프로젝트</h2>
+        <h2>2. Oracle SQL 기반 학사 데이터 조회, 분석 및 프로시저 구현</h2>
         <ul>
           <li>
             <pre class="pre-content">
-1. 한신대학교 정보시스템팀 - 학사행정시스템 개발 및 운영 (2025.04 ~ 재직 중)
+1. 업무 내용
 
-(Nexacro 17, Spring Boot, MyBatis, Oracle)
-학사·성적·수강 관리 시스템의 백엔드 로직을 개발 및 운영하며 핵심 행정 업무 안정성 유지
-Spring Boot + MyBatis 기반 학사 API를 구현하고, 업무 변경에 따른 로직 수정 및 기능 개선 수행
-Oracle 학사 데이터 구조를 분석하여 부서 요구사항에 맞는 데이터 추출 및 가공 로직 설계
-반복적으로 처리되던 행정 업무를 SQL 중심으로 자동화하여 수작업 처리 구간 축소
-Nexacro 기반 신규 화면 개발 및 기존 화면 개선을 통해 업무 흐름 단순화
-운영 중 발생한 데이터 오류 원인을 분석하고 보정 쿼리 작성으로 데이터 정합성 유지
-단순 기능 구현이 아닌, 실제 업무 프로세스를 분석하여 개선 방향을 제안하고 시스템에 반영
+사용자 및 업무 요청에 따른 학사 데이터 조회 SQL 작성 및 분석
+조회 결과의 정합성 검증 및 오류 데이터 원인 분석
+반복 조회 및 검증 로직을 프로시저로 구성하여 자동화
+대용량 데이터 조회 쿼리의 실행계획 분석 및 성능 개선
 
-2. (주)웹게이트 - CCTV 제어 안드로이드 앱 유지보수 (2024.06 ~ 2024.10)
+2. 수행 내용
 
-(JAVA, Retrofit)
-기존 CCTV 제어 및 모니터링 앱 유지보수 담당
-네트워크 통신 오류 및 화면 동기화 이슈 분석 후 수정
-실제 현장 장비 연동 환경에서 발생하는 예외 상황 대응 로직 보완
-앱 안정성 개선을 통해 현장 사용 중 발생하던 오류 재현 및 해결
+요청 기반으로 학생, 학적, 수강, 등록 데이터 조회 SQL 작성 및 결과 분석
+조회 결과 중 불일치·이상 데이터 검출 및 원인 추적
+반복 조회·검증 로직을 프로시저로 구현하여 재사용 구조 구성
+40만 건 이상 데이터 조회 시 조인 구조 및 조건 최적화로 성능 개선
 
-3. (주)메일플러그 - TODO List 안드로이드 네이티브 앱 개발 (2021.10 ~ 2022.07)
+3. 성과
 
-3인 프로젝트 / 모바일 파트 개발 리드
-Kotlin, Hilt, Coroutine, Room, Paging, WebSocket, Firebase
-사내 협업 효율 향상을 위한 신규 ‘할 일 관리 앱’ 개발 프로젝트 참여 (기획~런칭 전 과정)
-모바일 파트 개발 리드로서 전체 구조 설계 및 핵심 기능 구현 담당
-Clean Architecture 기반으로 데이터 흐름을 설계하여 기능 확장 및 유지보수 용이성 확보
-WebSocket 기반 실시간 동기화 및 오프라인 처리 로직 구현
-공통 UI 컴포넌트 모듈화로 화면 일관성 유지 및 개발 효율 개선
-Coroutine 기반 비동기 처리 구조 최적화를 통해 앱 반응 속도 및 안정성 개선
+데이터 조회 및 검증 처리 시간 단축
+반복 요청 대응을 프로시저화하여 업무 효율 향상
+대용량 조회 성능 개선으로 사용자 응답 속도 향상 
 
-4. (주)메일플러그 - 근태관리 안드로이드 네이티브 앱 개발 (2020.09 ~ 2021.08)
+4. 기술
 
-3인 프로젝트 / 모바일 파트 개발 리드
-Kotlin, Hilt, Coroutine, Room, WorkManager, Firebase
-출퇴근 기록 및 전자결재 신청을 통합한 근태관리 앱 설계 및 구현
-모바일 파트 개발 리드로서 전체 구조 설계 및 핵심 기능 개발 담당
-GPS 및 IP 기반 근태 검증 로직 구현으로 위치·네트워크 환경에 따른 데이터 처리 대응
-WorkManager 기반 백그라운드 동기화 및 알림 처리 구조 설계
-근태·휴가 신청 기능을 기존 웹 전자결재 시스템과 연동하여 데이터 중복 입력 제거
-데이터 처리 흐름과 UI 상태 관리 로직을 정리하여 앱 구동 지연 및 예외 발생 구간 개선
-
-5. (주)메일플러그 - 그룹웨어 안드로이드 네이티브 앱 개발 (2019.08 ~ 2021.10)
-
-5인 프로젝트 / Android 개발
-Kotlin, Room, Paging, Firebase, SqlCipher
-메일, 캘린더, 전자결재 등 그룹웨어 핵심 기능 신규 개발 및 기존 구조 개선
-기존 Java 기반 앱을 Kotlin으로 전환하며 코드 마이그레이션 및 호환성 검증 수행
-Firebase 기반 푸시 및 동기화 로직을 개선하여 실시간 알림 처리 안정화
-SqlCipher 적용을 통해 로컬 데이터 암호화 및 보안 강화
-캘린더 화면 구현 과정에서 커스텀 UI 컴포넌트 및 이벤트 처리 구조 설계
-LruCache와 Room 캐시 전략을 병행 적용하여 대용량 메일·게시글 로딩 속도 개선 및 메모리 사용 최적화
-
-6. (주)메일플러그 - FCM Push 알림 서버 구축 및 장기 운영 (2017 ~ 2022, 초기 개발 약 6개월)
-
-1인 개발 / Python(Flask), PostgreSQL, Redis, Nginx, Gunicorn
-FCM 기반 모바일 푸시 알림 서버 신규 설계 및 단독 개발
-Redis Queue를 활용한 비동기 메시지 처리 및 재발송 로직 구현
-REST API 설계 및 JWT 인증 기반 외부 연동 모듈 개발
-Flask + Gunicorn + Nginx 구조 최적화를 통해 대량 요청 처리 안정화
-Sentry, NewRelic 기반 장애 모니터링 및 복구 체계 구축
-분당 약 4,000건, 일 200만 건 규모의 메시지 발송 처리 운영
-
-7. (주)메일플러그 - 웹서비스 개발 및 유지보수 (2014 ~ 2018)
-
-PHP(CodeIgniter), JavaScript, MySQL, Python(Flask)
-자사 웹메일, CMS, VOC 등 주요 웹서비스 기능 개선 및 신규 모듈 개발
-고객 관리 및 상품 신청 등 사용자 중심 기능 설계 및 UI 개선
-SQL 튜닝 및 코드 리팩토링을 통해 페이지 응답 속도 및 안정성 개선
-Python(Flask) 기반 전자결재 백엔드 및 메일 검색·알림 모듈 추가 개발
-
-8. (주)메일플러그 - 윈도우 애플리케이션 개발 (2014 ~ 2015)
-
-2인 프로젝트 / Python(wxPython), PostgreSQL
-기업용 메신저 및 Outlook 계정 자동 설정 프로그램 개발
-반복 설정 작업 자동화를 통해 사용자 환경 구성 절차 단순화
-사용자별 프로필 데이터 동기화 및 다중 사용자 관리 기능 구현
-<!-- </pre
-            >
-          </li>
-          <li>
-            <strong>자체 개발 서비스</strong>
-            <br /><br />
-            업무 외에도 다양한 Android 앱을 기획·개발하여 Google Play에 다수
-            출시하였으며, 실제 사용자 피드백을 기반으로 기능 개선 및 유지보수를
-            지속적으로 진행하고 있습니다.
-            <pre class="pre-content">
-1. 야구장날씨 - 실시간 경기장 날씨 앱 (Google Play 서비스 중)
-
-   (Android / 개인 개발)
-    사용기술 : Kotlin, Jetpack Compose, Hilt, Room, Firebase
-    한국프로야구(KBO) 경기장별 실시간 날씨 정보 제공 앱
-    경기 일정과 지역별 기상 데이터를 연동하여 직관용 맞춤 정보 제공
-    Jetpack Compose 기반 전면 UI 구성 및 Firebase 실시간 데이터 관리
-    Google Play에 정식 배포 및 운영 중
-
-2. 잡로그(JobLOG) - 취업·이직 지원 현황 관리 웹서비스
-
-   (Web / 개인 개발)
-    사용기술 : React, FastAPI, PostgreSQL, Nginx, Ubuntu
-    개인의 취업 및 이직 지원 내역을 관리·분석하는 웹 플랫폼 개발
-    지원일·마감일 기반 자동 경과일 계산 및 시각화 기능 구현
-    FastAPI + PostgreSQL 기반 백엔드 설계 및 Nginx Reverse Proxy 환경 구축
-    실제 서비스 도메인 운영 중 (myjoblog.kr)
+Oracle SQL, PL/SQL, MyBatis, Spring Boot
 
 </pre
-            > -->
-          </li>
-        </ul>
-      </section>
-
-      <!-- Section 역량-->
-      <section id="competency" class="pdf-section">
-        <h2>역량</h2>
-        <ul>
-          <li>
-            <pre class="pre-content">
-1. 서비스 전반 개발 경험
-
-모바일, 웹, 서버 환경에서 기능 설계부터 운영까지 전 과정 수행 경험
-
-2. 운영 환경 대응 및 데이터 정합성 관리
-
-실서비스 환경에서 발생하는 오류 분석 및 데이터 보정 처리 경험
-트랜잭션 흐름 이해 기반의 안정적 로직 설계
-
-3. 백엔드 API 설계 및 대량 처리 구조 구현
-
-REST API 설계 경험 및 Redis 기반 비동기 메시지 처리 서버 단독 구축·운영
-
-4. 모바일 아키텍처 설계 경험
-
-Clean Architecture 기반 구조 설계 및 비동기 처리 최적화 경험
-
-5. 레거시 개선 및 구조 전환 경험
-
-Java → Kotlin 마이그레이션 및 기존 코드 구조 개선 경험
-
-6. 협업 및 리딩 경험
-
-3~5인 프로젝트에서 모바일 파트 리드 수행 및 기능·일정 조율 경험
-                        </pre
             >
-          </li>
-        </ul>
-      </section>
-
-      <!-- Section 전문보유 및 사용기술 -->
-      <section id="tech" class="pdf-section">
-        <h2>전문보유 및 사용기술</h2>
-        <div class="skills-category">
-          <h3>Backend</h3>
-          <ul>
-            <li>
-              Java, Sprint Boot, MyBatis, Python(Flask), REST API 설계 및 연동
-            </li>
-          </ul>
-        </div>
-        <div class="skills-category">
-          <h3>Database</h3>
-          <ul>
-            <li>
-              Oracle(PL/SQL, 트랜잭션 처리), PostgreSQL, MySQL, Redis
-            </li>
-          </ul>
-        </div>
-        <div class="skills-category">
-          <h3>Frontend (Enterprise)</h3>
-          <ul>
-            <li>Nexacro 17 (학사·행정 시스템 화면 개발)</li>
-          </ul>
-        </div>
-        <div class="skills-category">
-          <h3>Mobile</h3>
-          <ul>
-            <li>Kotlin, Jetpack, Coroutine, Hilt, CleanArchitecture</li>
-          </ul>
-        </div>
-        <div class="skills-category">
-          <h3>Web</h3>
-          <ul>
-            <li>React, PHP (CodeIgniter), JavaScript</li>
-          </ul>
-        </div>
-        <div class="skills-category">
-          <h3>Infra / DevOps</h3>
-          <ul>
-            <li>
-              Nginx, Gunicorn, Linux, Firebase, Sentry, NewRelic, Git 등
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Section 운영 서비스 -->
-      <!-- <section>
-        <h2>개인 운영중 서비스</h2>
-        <ul>
-          <li>
-            <strong>안드로이드 앱 – 야구장날씨</strong>
-            <div
+            <img
+              src="assets/imgs/ajou2.png"
+              alt=""
               style="
-                display: flex;
-                align-items: flex-start;
-                gap: 15px;
-                margin-top: 8px;
+                width: auto;
+                height: auto;
+                border: 1px solid #ddd;
+                border-radius: 6px;
               "
-            >
-              <img
-                src="assets/imgs/mongoose_icon.png"
-                alt="야구장날씨 앱 이미지"
-                style="
-                  width: 100px;
-                  height: auto;
-                  border: 1px solid #ddd;
-                  border-radius: 6px;
-                "
-                class="service-img"
-              />
-              <pre class="pre-content" style="margin: 0; padding: 0">
-                  Google Play Store 서비스 중
-                  한국프로야구 경기장 실시간 날씨 제공
-                  사용 기술: Kotlin, Jetpack Compose, Hilt, Room, Firebase
-                  링크: https://play.google.com/store/apps/details?id=com.apx8.mongoose
-        </pre
-              >
-            </div>
-          </li>
-          <li>
-            <strong>웹서비스 – 잡로그</strong>
-            <div
-              style="
-                display: flex;
-                align-items: flex-start;
-                gap: 15px;
-                margin-top: 8px;
-              "
-            >
-              <img
-                src="assets/imgs/chikorita_icon.png"
-                alt="잡로그 웹서비스 이미지"
-                style="
-                  width: 100px;
-                  height: auto;
-                  border: 1px solid #ddd;
-                  border-radius: 6px;
-                "
-                class="service-img"
-              />
-              <pre class="pre-content" style="margin: 0; padding: 0">
-                취업/이직 지원 현황 관리 및 데이터 분석 서비스
-                사용 기술: React, FastAPI, PostgreSQL, Nginx, Linux
-                링크 : <a href = 'http://myjoblog.kr'>myjoblog.kr</a>
-        </pre>
-            </div>
+              class="service-img"
+            />
           </li>
         </ul>
-      </section> -->
-
-      <!-- Section 기타 -->
-      <!-- <section>
-        <h2>기타</h2>
-        <ul>
-          <li>
-            <strong>자격증</strong>
-            <pre class="pre-content">
-데이터분석준전문가 (ADsP) (2025.11.28.)
-SQL개발자 (2024.12.13.)
-리눅스마스터2급 (2016.12.16)
-정보처리기사 (2012.11.23)
-                        </pre
-            >
-          </li>
-          <li>
-            <strong>학력</strong>
-            <pre class="pre-content">
-                            중앙대학교 : 영어학과(주전공) / 정보시스템학과(복수전공)
-                        </pre
-            >
-          </li>
-        </ul>
-      </section> -->
+      </section>
     </div>
-
-    <!-- Section 포트폴리오 블럭 -->
-    <!-- <div class="container portfolio" id="portfolio">
-      <h1 style="margin-bottom: 30px">포트폴리오</h1>
-      <section>
-        <div class="section-title">
-          그룹웨어 (메일, 연락처, 캘린더, 근태관리 등)
-        </div>
-        <p class="portfolio-desc">
-          사용 : 기업솔루션(메일플러그) ▪ 플랫폼 : 안드로이드 ▪ 개발규모 :
-          3인~5인 ▪ 참여 : 100%
-        </p>
-        <div class="slider" id="slider1">
-          <div class="slides">
-            <img
-              src="assets/imgs/g_company1.png"
-              class="portfolio-img"
-              alt=""
-            />
-            <img
-              src="assets/imgs/g_company2.png"
-              class="portfolio-img"
-              alt=""
-            />
-            <img
-              src="assets/imgs/g_company3.png"
-              class="portfolio-img"
-              alt=""
-            />
-          </div>
-          <button class="prev">◀</button>
-          <button class="next">▶</button>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-title">프로야구직관러 (직관기록 관리)</div>
-        <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
-        <div class="slider" id="slider2">
-          <div class="slides">
-            <img src="assets/imgs/g_prooya1.png" class="portfolio-img" alt="" />
-            <img src="assets/imgs/g_prooya2.png" class="portfolio-img" alt="" />
-          </div>
-          <button class="prev">◀</button>
-          <button class="next">▶</button>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-title">아!그거 ('할일(Todo List)'리스트 관리)</div>
-        <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
-        <div class="slider" id="slider3">
-          <div class="slides">
-            <img
-              src="assets/imgs/g_chipmunk1.png"
-              class="portfolio-img"
-              alt=""
-            />
-            <img
-              src="assets/imgs/g_chipmunk2.png"
-              class="portfolio-img"
-              alt=""
-            />
-          </div>
-          <button class="prev">◀</button>
-          <button class="next">▶</button>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-title">야구장날씨 (날씨 정보)</div>
-        <p class="portfolio-desc">사용 : 개인운영 ▪ 플랫폼 : 안드로이드</p>
-        <div class="slider" id="slider4">
-          <div class="slides">
-            <img
-              src="assets/imgs/g_mongoose1.png"
-              class="portfolio-img"
-              alt=""
-            />
-          </div>
-          <button class="prev">◀</button>
-          <button class="next">▶</button>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-title">잡퀘스트 (입사지원 관리 및 분석)</div>
-        <p class="portfolio-desc">
-          사용 : 개인운영 ▪ 플랫폼 : 웹(React), 백엔드(FastAPI)
-        </p>
-        <div class="slider" id="slider4">
-          <div class="slides">
-            <img
-              src="assets/imgs/g_jobquest1.png"
-              class="portfolio-img"
-              alt=""
-            />
-            <img
-              src="assets/imgs/g_jobquest2.png"
-              class="portfolio-img"
-              alt=""
-            />
-          </div>
-          <button class="prev">◀</button>
-          <button class="next">▶</button>
-        </div>
-      </section>
-    </div> -->
 
     <footer class="footer">
       <p>
         &copy; 2025 정회남. All rights reserved.<br />
-        최종업데이트 : 2026.02.16.
+        최종업데이트 : 2026.06.16.
       </p>
     </footer>
 
@@ -540,344 +188,6 @@ SQL개발자 (2024.12.13.)
         });
         preElement.innerHTML = processedLines.join("\n"); // 각 줄을 다시 결합하여 업데이트
       });
-
-      // 'PDF다운로드' 버튼이벤트
-      document.getElementById("download-pdf").addEventListener("click", async () => {
-        const { jsPDF } = window.jspdf;
-        const button = document.getElementById("download-pdf");
-        const originalText = button.textContent;
-
-        try {
-          button.textContent = "PDF 생성 중...";
-          button.disabled = true;
-
-          // PDF 모드 ON (CSS로만 제어)
-          document.body.classList.add("pdf-mode");
-
-          // 캡처 대상: career 컨테이너(네비 제외)
-          const container = document.querySelector(".container");
-
-          // 렌더 안정화(폰트/레이아웃)
-          await document.fonts?.ready;
-          await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-
-          const canvas = await html2canvas(container, {
-            scale: 2,
-            useCORS: true,
-            backgroundColor: "#ffffff",
-            logging: false,
-            scrollX: 0,
-            scrollY: -window.scrollY,
-            windowWidth: document.documentElement.clientWidth,
-            windowHeight: document.documentElement.clientHeight,
-          });
-
-          const pdf = new jsPDF("p", "mm", "a4");
-
-          // A4(mm) 기준 출력 영역(여백 포함)
-          const pageWidth = 210;
-          const pageHeight = 297;
-          const margin = 10;
-
-          const usableWidth = pageWidth - margin * 2;
-          const usableHeight = pageHeight - margin * 2;
-
-          // 캔버스(px) -> pdf(mm) 변환 비율
-          const imgWidthMm = usableWidth;
-          const imgHeightMm = (canvas.height * imgWidthMm) / canvas.width;
-
-          // 한 페이지에 들어갈 캔버스 높이(px)
-          const pageCanvasHeightPx = Math.floor((canvas.width * usableHeight) / imgWidthMm);
-
-          let renderedHeight = 0;
-          let pageIndex = 0;
-
-          while (renderedHeight < canvas.height) {
-            // 페이지별로 canvas를 잘라서 넣는다 (겹침/깨짐 방지)
-            const sliceHeight = Math.min(pageCanvasHeightPx, canvas.height - renderedHeight);
-
-            const pageCanvas = document.createElement("canvas");
-            pageCanvas.width = canvas.width;
-            pageCanvas.height = sliceHeight;
-
-            const ctx = pageCanvas.getContext("2d");
-            ctx.drawImage(
-              canvas,
-              0,
-              renderedHeight,
-              canvas.width,
-              sliceHeight,
-              0,
-              0,
-              canvas.width,
-              sliceHeight
-            );
-
-            const imgData = pageCanvas.toDataURL("image/png", 1.0);
-            const sliceHeightMm = (sliceHeight * imgWidthMm) / canvas.width;
-
-            if (pageIndex > 0) pdf.addPage();
-            pdf.addImage(imgData, "PNG", margin, margin, imgWidthMm, sliceHeightMm);
-
-            renderedHeight += sliceHeight;
-            pageIndex++;
-          }
-
-          pdf.save("경력기술서(정회남).pdf");
-        } catch (err) {
-          console.error(err);
-          alert("PDF 생성 중 오류가 발생했습니다. 다시 시도해주세요.");
-        } finally {
-          document.body.classList.remove("pdf-mode");
-          button.textContent = originalText;
-          button.disabled = false;
-        }
-      });
-
-
-      // document.getElementById("download-pdf").addEventListener("click", () => {
-      //   const { jsPDF } = window.jspdf;
-
-        // PDF 생성 전 로딩 표시
-      //   const button = document.getElementById("download-pdf");
-      //   const originalText = button.textContent;
-      //   button.textContent = "PDF 생성 중...";
-      //   button.disabled = true;
-
-      //   // 포트폴리오 섹션 임시 숨김 (PDF에서 제외)
-      //   const portfolioSection = document.querySelector(".portfolio");
-      //   const originalDisplay = portfolioSection.style.display;
-      //   portfolioSection.style.display = "none";
-
-      //   // 네비게이션 바도 임시 숨김
-      //   const navbar = document.querySelector(".navbar-container");
-      //   const navbarOriginalDisplay = navbar.style.display;
-      //   navbar.style.display = "none";
-
-      //   // 푸터도 임시 숨김
-      //   const footer = document.querySelector(".footer");
-      //   const footerOriginalDisplay = footer.style.display;
-      //   footer.style.display = "none";
-
-      //   // 컨테이너에 PDF용 스타일 적용
-      //   const container = document.querySelector(".container");
-      //   const originalBackground = container.style.background;
-      //   const originalBoxShadow = container.style.boxShadow;
-      //   container.style.background = "white";
-      //   container.style.boxShadow = "none";
-
-      //   // PDF 모드 클래스 추가
-      //   document.body.classList.add("pdf-mode");
-
-      //   // 모든 섹션에 흰색 배경 적용
-      //   const sections = document.querySelectorAll("section");
-      //   const originalSectionStyles = [];
-      //   sections.forEach((section, index) => {
-      //     originalSectionStyles[index] = {
-      //       background: section.style.background,
-      //       boxShadow: section.style.boxShadow,
-      //       border: section.style.border,
-      //     };
-      //     section.style.background = "white";
-      //     section.style.boxShadow = "none";
-      //     section.style.border = "1px solid #ddd";
-      //   });
-
-      //   // 스킬 카테고리에 흰색 배경 적용
-      //   const skillCategories = document.querySelectorAll(".skills-category");
-      //   const originalSkillStyles = [];
-      //   skillCategories.forEach((category, index) => {
-      //     originalSkillStyles[index] = {
-      //       background: category.style.background,
-      //       boxShadow: category.style.boxShadow,
-      //       border: category.style.border,
-      //     };
-      //     category.style.background = "white";
-      //     category.style.boxShadow = "none";
-      //     category.style.border = "1px solid #ddd";
-      //   });
-
-      //   // pre-content에 흰색 배경 적용
-      //   const preContents = document.querySelectorAll(".pre-content");
-      //   const originalPreStyles = [];
-      //   preContents.forEach((pre, index) => {
-      //     originalPreStyles[index] = {
-      //       background: pre.style.background,
-      //       border: pre.style.border,
-      //     };
-      //     pre.style.background = "white";
-      //     pre.style.border = "1px solid #eee";
-      //   });
-
-      //   // ul li에 흰색 배경 적용
-      //   const listItems = document.querySelectorAll("ul li");
-      //   const originalLiStyles = [];
-      //   listItems.forEach((li, index) => {
-      //     originalLiStyles[index] = {
-      //       background: li.style.background,
-      //       boxShadow: li.style.boxShadow,
-      //       border: li.style.border,
-      //     };
-      //     li.style.background = "white";
-      //     li.style.boxShadow = "none";
-      //     li.style.border = "1px solid #eee";
-      //   });
-
-      //   // 잠시 대기 후 캡처 (스타일 적용 완료 대기)
-      //   setTimeout(() => {
-      //     html2canvas(container, {
-      //       scale: 2,
-      //       useCORS: true,
-      //       allowTaint: true,
-      //       backgroundColor: "#ffffff",
-      //       logging: false,
-      //       width: container.offsetWidth,
-      //       height: container.offsetHeight,
-      //       scrollX: 0,
-      //       scrollY: 0,
-      //       windowWidth: document.documentElement.offsetWidth,
-      //       windowHeight: document.documentElement.offsetHeight,
-      //       foreignObjectRendering: true,
-      //     })
-      //       .then((canvas) => {
-      //         // 모든 스타일 복원
-      //         portfolioSection.style.display = originalDisplay;
-      //         navbar.style.display = navbarOriginalDisplay;
-      //         footer.style.display = footerOriginalDisplay;
-
-      //         container.style.background = originalBackground;
-      //         container.style.boxShadow = originalBoxShadow;
-
-      //         // PDF 모드 클래스 제거
-      //         document.body.classList.remove("pdf-mode");
-
-      //         sections.forEach((section, index) => {
-      //           if (originalSectionStyles[index]) {
-      //             section.style.background =
-      //               originalSectionStyles[index].background;
-      //             section.style.boxShadow =
-      //               originalSectionStyles[index].boxShadow;
-      //             section.style.border = originalSectionStyles[index].border;
-      //           }
-      //         });
-
-      //         skillCategories.forEach((category, index) => {
-      //           if (originalSkillStyles[index]) {
-      //             category.style.background =
-      //               originalSkillStyles[index].background;
-      //             category.style.boxShadow =
-      //               originalSkillStyles[index].boxShadow;
-      //             category.style.border = originalSkillStyles[index].border;
-      //           }
-      //         });
-
-      //         preContents.forEach((pre, index) => {
-      //           if (originalPreStyles[index]) {
-      //             pre.style.background = originalPreStyles[index].background;
-      //             pre.style.border = originalPreStyles[index].border;
-      //           }
-      //         });
-
-      //         listItems.forEach((li, index) => {
-      //           if (originalLiStyles[index]) {
-      //             li.style.background = originalLiStyles[index].background;
-      //             li.style.boxShadow = originalLiStyles[index].boxShadow;
-      //             li.style.border = originalLiStyles[index].border;
-      //           }
-      //         });
-
-      //         const imgData = canvas.toDataURL("image/png", 1.0);
-      //         const pdf = new jsPDF("p", "mm", "a4");
-
-      //         const imgWidth = 190;
-      //         const pageHeight = 277; // 여백 고려하여 실제 사용 가능한 높이
-      //         const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-      //         // 첫 페이지 추가
-      //         pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
-
-      //         // 추가 페이지가 필요한 경우
-      //         if (imgHeight > pageHeight) {
-      //           const remainingHeight = imgHeight - pageHeight;
-      //           const additionalPages = Math.ceil(remainingHeight / pageHeight);
-
-      //           for (let i = 0; i < additionalPages; i++) {
-      //             pdf.addPage();
-      //             const yOffset = -(pageHeight + i * pageHeight);
-      //             pdf.addImage(
-      //               imgData,
-      //               "PNG",
-      //               10,
-      //               yOffset,
-      //               imgWidth,
-      //               imgHeight,
-      //             );
-      //           }
-      //         }
-
-      //         // PDF 저장
-      //         pdf.save("경력기술서(정회남).pdf");
-
-      //         // 버튼 상태 복원
-      //         button.textContent = originalText;
-      //         button.disabled = false;
-      //       })
-      //       .catch((err) => {
-      //         // 에러 발생 시 모든 스타일 복원
-      //         portfolioSection.style.display = originalDisplay;
-      //         navbar.style.display = navbarOriginalDisplay;
-      //         footer.style.display = footerOriginalDisplay;
-
-      //         container.style.background = originalBackground;
-      //         container.style.boxShadow = originalBoxShadow;
-
-      //         // PDF 모드 클래스 제거
-      //         document.body.classList.remove("pdf-mode");
-
-      //         sections.forEach((section, index) => {
-      //           if (originalSectionStyles[index]) {
-      //             section.style.background =
-      //               originalSectionStyles[index].background;
-      //             section.style.boxShadow =
-      //               originalSectionStyles[index].boxShadow;
-      //             section.style.border = originalSectionStyles[index].border;
-      //           }
-      //         });
-
-      //         skillCategories.forEach((category, index) => {
-      //           if (originalSkillStyles[index]) {
-      //             category.style.background =
-      //               originalSkillStyles[index].background;
-      //             category.style.boxShadow =
-      //               originalSkillStyles[index].boxShadow;
-      //             category.style.border = originalSkillStyles[index].border;
-      //           }
-      //         });
-
-      //         preContents.forEach((pre, index) => {
-      //           if (originalPreStyles[index]) {
-      //             pre.style.background = originalPreStyles[index].background;
-      //             pre.style.border = originalPreStyles[index].border;
-      //           }
-      //         });
-
-      //         listItems.forEach((li, index) => {
-      //           if (originalLiStyles[index]) {
-      //             li.style.background = originalLiStyles[index].background;
-      //             li.style.boxShadow = originalLiStyles[index].boxShadow;
-      //             li.style.border = originalLiStyles[index].border;
-      //           }
-      //         });
-
-      //         console.error("PDF 생성 중 오류 발생:", err);
-      //         alert("PDF 생성 중 오류가 발생했습니다. 다시 시도해주세요.");
-
-      //         // 버튼 상태 복원
-      //         button.textContent = originalText;
-      //         button.disabled = false;
-      //       });
-      //   }, 100);
-      // });
     </script>
   </body>
 </html>
